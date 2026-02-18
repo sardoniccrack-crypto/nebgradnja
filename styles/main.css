@@ -574,13 +574,16 @@ a:hover {
 
 .video-placeholder {
   margin-top: var(--space-lg);
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 .about-video {
   display: block;
   width: 100%;
   max-width: 800px;
-  margin: 0 auto;
   border-radius: var(--radius-lg);
   background: var(--color-dark);
 }
