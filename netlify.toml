@@ -1,0 +1,10 @@
+# Static site — no build step. Publish directory = repository root.
+[build]
+  publish = "."
+  command = ""
+
+# Optional: redirect SPA-style if you add client-side routing later
+# [[redirects]]
+#   from = "/*"
+#   to = "/index.html"
+#   status = 200

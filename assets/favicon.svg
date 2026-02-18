@@ -1,0 +1,15 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32" width="32" height="32">
+  <!-- Orange left stroke of N -->
+  <rect x="1" y="1" width="10" height="30" fill="#E97E25" rx="1"/>
+  <!-- Dark blue tower / right stroke of N -->
+  <rect x="11" y="1" width="20" height="30" fill="#1E3D59" rx="1"/>
+  <!-- White horizontal beams on blue -->
+  <line x1="11" y1="8" x2="18" y2="8" stroke="#fff" stroke-width="1.2"/>
+  <line x1="11" y1="16" x2="18" y2="16" stroke="#fff" stroke-width="1.2"/>
+  <line x1="11" y1="24" x2="18" y2="24" stroke="#fff" stroke-width="1.2"/>
+  <!-- White diagonal truss lines -->
+  <line x1="20" y1="6" x2="20" y2="26" stroke="#fff" stroke-width="0.8" opacity="0.9"/>
+  <line x1="24" y1="6" x2="24" y2="26" stroke="#fff" stroke-width="0.8" opacity="0.9"/>
+  <line x1="20" y1="10" x2="24" y2="14" stroke="#fff" stroke-width="0.6" opacity="0.8"/>
+  <line x1="20" y1="18" x2="24" y2="22" stroke="#fff" stroke-width="0.6" opacity="0.8"/>
+</svg>
