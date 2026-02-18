@@ -15,8 +15,8 @@
   <!-- Edit these 3 links in one place: worker (traži posao), service (treba usluga), contact -->
   <script type="application/json" id="site-links">
     {
-      "linkWorker": "#form-posao",
-      "linkService": "#form-radnike",
+      "linkWorker": "posao.html",
+      "linkService": "usluga.html",
       "linkContact": "#kontakt"
     }
   </script>
@@ -58,22 +58,11 @@
         <h1 class="hero-title" data-i18n="heroTitle">Tražite posao ili radnike? Mi povezujemo.</h1>
         <p class="hero-subtitle" data-i18n="heroSubtitle">Povezujemo građevinske radnike i poslodavce. Jednostavno, brzo, pouzdano.</p>
         <div class="hero-ctas">
-          <a href="#form-posao" class="btn btn-primary" data-link="worker" data-i18n="heroCtaJobs">Tražim posao</a>
-          <a href="#form-radnike" class="btn btn-secondary" data-link="service" data-i18n="heroCtaWorkers">Treba vam usluga?</a>
-          <a href="#kontakt" class="btn btn-outline" data-link="contact" data-i18n="navContact">Kontakt</a>
+          <a href="posao.html" class="btn btn-primary" data-link="worker" data-i18n="heroCtaJobs">Tražim posao</a>
+          <a href="usluga.html" class="btn btn-secondary" data-link="service" data-i18n="heroCtaWorkers">Treba vam usluga?</a>
         </div>
       </div>
     </section>
-
-    <nav class="freeform-links" aria-label="Glavni linkovi">
-      <div class="container">
-        <a href="#form-posao" data-link="worker" data-i18n="heroCtaJobs">Tražim posao</a>
-        <span class="freeform-sep" aria-hidden="true">|</span>
-        <a href="#form-radnike" data-link="service" data-i18n="heroCtaWorkers">Treba vam usluga?</a>
-        <span class="freeform-sep" aria-hidden="true">|</span>
-        <a href="#kontakt" data-link="contact" data-i18n="navContact">Kontakt</a>
-      </div>
-    </nav>
 
     <section id="usluge" class="section usluge">
       <div class="container">
@@ -83,60 +72,14 @@
             <div class="card-icon" aria-hidden="true">👷</div>
             <h3 class="card-title" data-i18n="cardJobTitle">Tražite posao?</h3>
             <p class="card-text" data-i18n="cardJobText">Tražite posao u građevini? Prijavite se kod nas. Povezujemo radnike sa poslodavcima širom regiona.</p>
-            <a href="#form-posao" class="btn btn-primary card-cta" data-link="worker" data-i18n="cardJobCta">Prijavi se</a>
+            <a href="posao.html" class="btn btn-primary card-cta" data-link="worker" data-i18n="cardJobCta">Prijavi se</a>
           </article>
           <article class="card">
             <div class="card-icon" aria-hidden="true">🏗️</div>
             <h3 class="card-title" data-i18n="cardWorkersTitle">Treba vam usluga?</h3>
             <p class="card-text" data-i18n="cardWorkersText">Potrebna vam je građevinska usluga ili pomoć? Javite nam se i dogovorimo detalje.</p>
-            <a href="#form-radnike" class="btn btn-primary card-cta" data-link="service" data-i18n="cardWorkersCta">Kontaktirajte nas</a>
+            <a href="usluga.html" class="btn btn-primary card-cta" data-link="service" data-i18n="cardWorkersCta">Kontaktirajte nas</a>
           </article>
-        </div>
-      </div>
-    </section>
-
-    <section id="form-posao" class="section form-section">
-      <div class="container">
-        <h2 class="section-title" data-i18n="cardJobTitle">Tražite posao?</h2>
-        <div class="form-section-grid">
-          <div class="form-section-image">
-            <img src="assets/form-posao.png" alt="" width="600" height="400">
-          </div>
-          <div class="form-section-form-wrap">
-            <form class="contact-form form-section-form" action="https://formspree.io/f/xkovzrvr" method="POST">
-              <input type="hidden" name="request_type" value="posao">
-              <input type="text" name="_gotcha" tabindex="-1" autocomplete="off" class="hidden" aria-hidden="true">
-              <label for="posao-name"><span data-i18n="formName">Ime i prezime</span><input type="text" id="posao-name" name="name" required minlength="2" autocomplete="name"></label>
-              <label for="posao-email"><span data-i18n="formEmail">Email</span><input type="email" id="posao-email" name="email" required autocomplete="email"></label>
-              <label for="posao-phone"><span data-i18n="formPhone">Telefon</span><input type="tel" id="posao-phone" name="phone" autocomplete="tel"></label>
-              <label for="posao-message"><span data-i18n="formMessage">Poruka</span><textarea id="posao-message" name="message" rows="4" required></textarea></label>
-              <button type="submit" class="btn btn-primary btn-submit" data-i18n="formSubmit">Pošalji</button>
-            </form>
-            <p class="form-success form-section-success" role="status" aria-live="polite" hidden data-i18n="formSuccess">Hvala, javićemo vam se uskoro.</p>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <section id="form-radnike" class="section form-section form-section--reverse">
-      <div class="container">
-        <h2 class="section-title" data-i18n="cardWorkersTitle">Treba vam usluga?</h2>
-        <div class="form-section-grid">
-          <div class="form-section-image">
-            <img src="assets/form-radnike.png" alt="" width="600" height="400">
-          </div>
-          <div class="form-section-form-wrap">
-            <form class="contact-form form-section-form" action="https://formspree.io/f/xkovzrvr" method="POST">
-              <input type="hidden" name="request_type" value="radnike">
-              <input type="text" name="_gotcha" tabindex="-1" autocomplete="off" class="hidden" aria-hidden="true">
-              <label for="radnike-name"><span data-i18n="formName">Ime i prezime</span><input type="text" id="radnike-name" name="name" required minlength="2" autocomplete="name"></label>
-              <label for="radnike-email"><span data-i18n="formEmail">Email</span><input type="email" id="radnike-email" name="email" required autocomplete="email"></label>
-              <label for="radnike-phone"><span data-i18n="formPhone">Telefon</span><input type="tel" id="radnike-phone" name="phone" autocomplete="tel"></label>
-              <label for="radnike-message"><span data-i18n="formMessage">Poruka</span><textarea id="radnike-message" name="message" rows="4" required></textarea></label>
-              <button type="submit" class="btn btn-primary btn-submit" data-i18n="formSubmit">Pošalji</button>
-            </form>
-            <p class="form-success form-section-success" role="status" aria-live="polite" hidden data-i18n="formSuccess">Hvala, javićemo vam se uskoro.</p>
-          </div>
         </div>
       </div>
     </section>
@@ -144,11 +87,11 @@
     <section id="o-nama" class="section about">
       <div class="container">
         <h2 class="section-title" data-i18n="aboutTitle">O nama</h2>
+        <p class="about-intro" data-i18n="aboutTrust">Nebgradnja je građevinska firma sa deset godina iskustva u povezivanju radnika i poslodavaca i u pružanju građevinskih usluga. Našu pouzdanost stežemo kroz iskren odnos, jasan dogovor i isporuku obećanog — nismo kao drugi koji obećavaju a ne ispunjavaju. Radnici i investitori nam veruju jer dugo radimo u struci, poznajemo teren i stojimo iza svake reči.</p>
         <div class="video-placeholder">
-          <div class="video-box">
-            <span class="video-icon" aria-hidden="true">▶</span>
-            <p class="video-text" data-i18n="videoPlaceholder">Video će biti dodato</p>
-          </div>
+          <video class="about-video" src="assets/video.mp4" controls playsinline preload="metadata" aria-label="Nebgradnja video">
+            <p data-i18n="videoPlaceholder">Video će biti dodato</p>
+          </video>
         </div>
       </div>
     </section>
@@ -187,9 +130,6 @@
                 <img src="assets/gallery-new-3.png" alt="Projekat" width="800" height="600">
               </figure>
               <figure class="gallery-slide">
-                <img src="assets/gallery-new-4.png" alt="Projekat" width="800" height="600">
-              </figure>
-              <figure class="gallery-slide">
                 <img src="assets/gallery-new-5.png" alt="Projekat" width="800" height="600">
               </figure>
               <figure class="gallery-slide">
@@ -201,7 +141,7 @@
             <span aria-hidden="true">›</span>
           </button>
         </div>
-        <p class="gallery-counter" aria-live="polite"><span class="gallery-current">1</span> / 11</p>
+        <p class="gallery-counter" aria-live="polite"><span class="gallery-current">1</span> / 10</p>
       </div>
     </section>
 

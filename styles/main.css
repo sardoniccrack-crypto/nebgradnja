@@ -368,41 +368,6 @@ a:hover {
   border-color: var(--color-dark);
 }
 
-/* ===== Freeform links bar (worker | service | contact) ===== */
-.freeform-links {
-  background: var(--color-bg-alt);
-  border-bottom: 1px solid var(--color-border);
-  padding: var(--space-sm) var(--space-md);
-}
-
-.freeform-links .container {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  gap: var(--space-sm) var(--space-lg);
-  align-items: center;
-}
-
-.freeform-links a {
-  font-weight: 600;
-  text-decoration: none;
-  color: var(--color-accent);
-}
-
-.freeform-links a:hover {
-  text-decoration: underline;
-}
-
-.freeform-links .freeform-sep {
-  color: var(--color-text-muted);
-  font-weight: 400;
-  user-select: none;
-}
-
-@media (max-width: 600px) {
-  .freeform-links .freeform-sep { display: none; }
-}
-
 /* ===== Usluge cards (mobile-first) ===== */
 .usluge {
   background: var(--color-bg-alt);
@@ -482,7 +447,34 @@ a:hover {
   margin-top: var(--space-md);
 }
 
+.form-page-back {
+  margin-top: var(--space-lg);
+}
+
+.form-page-back a {
+  text-decoration: none;
+}
+
+.form-page-back a:hover {
+  text-decoration: none;
+}
+
 /* ===== About (mobile-first) ===== */
+.about .section-title {
+  text-align: center;
+  font-weight: 700;
+}
+
+.about-intro {
+  max-width: 70ch;
+  margin: 0 auto var(--space-lg);
+  font-size: 1.0625rem;
+  line-height: 1.7;
+  color: var(--color-text);
+  text-align: center;
+  font-weight: 700;
+}
+
 .about-grid {
   display: flex;
   flex-direction: column;
@@ -584,28 +576,13 @@ a:hover {
   margin-top: var(--space-lg);
 }
 
-.video-box {
-  background: #cbd5e1;
+.about-video {
+  display: block;
+  width: 100%;
+  max-width: 800px;
+  margin: 0 auto;
   border-radius: var(--radius-lg);
-  min-height: 200px;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  gap: var(--space-sm);
-  padding: var(--space-lg);
-}
-
-.video-icon {
-  font-size: 3rem;
-  color: var(--color-dark);
-  opacity: 0.8;
-}
-
-.video-text {
-  margin: 0;
-  font-weight: 500;
-  color: var(--color-dark);
+  background: var(--color-dark);
 }
 
 /* ===== Contact (mobile-first) ===== */

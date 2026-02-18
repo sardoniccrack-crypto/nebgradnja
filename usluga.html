@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="sr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title data-i18n="metaTitle">Nebgradnja — Treba vam usluga?</title>
+  <link rel="icon" type="image/svg+xml" href="assets/favicon.svg">
+  <link rel="icon" type="image/png" href="assets/logo.png" sizes="any">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles/main.css">
+</head>
+<body>
+  <header class="header">
+    <div class="header-inner">
+      <a href="index.html" class="logo" aria-label="Nebgradnja početna">
+        <img src="assets/logo-icon.png" alt="" class="logo-img" width="56" height="56">
+        <span class="logo-word">NEBGRADNJA</span>
+      </a>
+      <div class="header-right">
+        <div class="script-switcher" role="group" aria-label="Language">
+          <button type="button" class="script-btn active" data-script="latn" aria-pressed="true">Latinica</button>
+          <button type="button" class="script-btn" data-script="cyrl" aria-pressed="false">Ћирилица</button>
+          <button type="button" class="script-btn" data-script="eng" aria-pressed="false">English</button>
+        </div>
+        <button type="button" class="hamburger" aria-expanded="false" aria-controls="nav-menu" aria-label="Meni">
+          <span></span>
+          <span></span>
+          <span></span>
+        </button>
+        <nav id="nav-menu" class="nav" aria-hidden="true">
+          <a href="index.html" class="nav-link" data-i18n="navHome">Početna</a>
+          <a href="index.html#usluge" class="nav-link" data-i18n="navServices">Usluge</a>
+          <a href="index.html#o-nama" class="nav-link" data-i18n="navAbout">O nama</a>
+          <a href="index.html#galerija" class="nav-link" data-i18n="navGallery">Galerija</a>
+          <a href="index.html#kontakt" class="nav-link" data-i18n="navContact">Kontakt</a>
+        </nav>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <section class="section form-section form-section--reverse form-page">
+      <div class="container">
+        <h1 class="section-title" data-i18n="cardWorkersTitle">Treba vam usluga?</h1>
+        <div class="form-section-grid">
+          <div class="form-section-image">
+            <img src="assets/form-radnike.png" alt="" width="600" height="400">
+          </div>
+          <div class="form-section-form-wrap">
+            <form class="contact-form form-section-form" action="https://formspree.io/f/xkovzrvr" method="POST">
+              <input type="hidden" name="request_type" value="radnike">
+              <input type="text" name="_gotcha" tabindex="-1" autocomplete="off" class="hidden" aria-hidden="true">
+              <label for="radnike-name"><span data-i18n="formName">Ime i prezime</span><input type="text" id="radnike-name" name="name" required minlength="2" autocomplete="name"></label>
+              <label for="radnike-email"><span data-i18n="formEmail">Email</span><input type="email" id="radnike-email" name="email" required autocomplete="email"></label>
+              <label for="radnike-phone"><span data-i18n="formPhone">Telefon</span><input type="tel" id="radnike-phone" name="phone" autocomplete="tel"></label>
+              <label for="radnike-message"><span data-i18n="formMessage">Poruka</span><textarea id="radnike-message" name="message" rows="4" required></textarea></label>
+              <button type="submit" class="btn btn-primary btn-submit" data-i18n="formSubmit">Pošalji</button>
+            </form>
+            <p class="form-success form-section-success" role="status" aria-live="polite" hidden data-i18n="formSuccess">Hvala, javićemo vam se uskoro.</p>
+          </div>
+        </div>
+        <p class="form-page-back"><a href="index.html" class="btn btn-secondary" data-i18n="navHome">← Početna</a></p>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-inner">
+        <p class="footer-copy">
+          <span data-i18n="footerCopy">© 2025 Nebgradnja. Sva prava zadržana.</span>
+        </p>
+        <div class="footer-contacts">
+          <a href="tel:+38162202115" class="footer-link">+381 62 202 115</a>
+          <a href="mailto:nebgradnja@gmail.com" class="footer-link">nebgradnja@gmail.com</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <script src="scripts/i18n.js"></script>
+  <script src="scripts/main.js"></script>
+</body>
+</html>
