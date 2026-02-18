@@ -12,6 +12,14 @@
   <link rel="stylesheet" href="styles/main.css">
 </head>
 <body>
+  <!-- Edit these 3 links in one place: worker (traži posao), service (treba usluga), contact -->
+  <script type="application/json" id="site-links">
+    {
+      "linkWorker": "#form-posao",
+      "linkService": "#form-radnike",
+      "linkContact": "#kontakt"
+    }
+  </script>
   <header class="header">
     <div class="header-inner">
       <a href="#pocetna" class="logo" aria-label="Nebgradnja početna">
@@ -34,7 +42,7 @@
           <a href="#usluge" class="nav-link" data-i18n="navServices">Usluge</a>
           <a href="#o-nama" class="nav-link" data-i18n="navAbout">O nama</a>
           <a href="#galerija" class="nav-link" data-i18n="navGallery">Galerija</a>
-          <a href="#kontakt" class="nav-link" data-i18n="navContact">Kontakt</a>
+          <a href="#kontakt" class="nav-link" data-link="contact" data-i18n="navContact">Kontakt</a>
         </nav>
       </div>
     </div>
@@ -50,11 +58,22 @@
         <h1 class="hero-title" data-i18n="heroTitle">Tražite posao ili radnike? Mi povezujemo.</h1>
         <p class="hero-subtitle" data-i18n="heroSubtitle">Povezujemo građevinske radnike i poslodavce. Jednostavno, brzo, pouzdano.</p>
         <div class="hero-ctas">
-          <a href="#form-posao" class="btn btn-primary" data-i18n="heroCtaJobs">Tražim posao</a>
-          <a href="#form-radnike" class="btn btn-secondary" data-i18n="heroCtaWorkers">Treba vam usluga?</a>
+          <a href="#form-posao" class="btn btn-primary" data-link="worker" data-i18n="heroCtaJobs">Tražim posao</a>
+          <a href="#form-radnike" class="btn btn-secondary" data-link="service" data-i18n="heroCtaWorkers">Treba vam usluga?</a>
+          <a href="#kontakt" class="btn btn-outline" data-link="contact" data-i18n="navContact">Kontakt</a>
         </div>
       </div>
     </section>
+
+    <nav class="freeform-links" aria-label="Glavni linkovi">
+      <div class="container">
+        <a href="#form-posao" data-link="worker" data-i18n="heroCtaJobs">Tražim posao</a>
+        <span class="freeform-sep" aria-hidden="true">|</span>
+        <a href="#form-radnike" data-link="service" data-i18n="heroCtaWorkers">Treba vam usluga?</a>
+        <span class="freeform-sep" aria-hidden="true">|</span>
+        <a href="#kontakt" data-link="contact" data-i18n="navContact">Kontakt</a>
+      </div>
+    </nav>
 
     <section id="usluge" class="section usluge">
       <div class="container">
@@ -64,13 +83,13 @@
             <div class="card-icon" aria-hidden="true">👷</div>
             <h3 class="card-title" data-i18n="cardJobTitle">Tražite posao?</h3>
             <p class="card-text" data-i18n="cardJobText">Tražite posao u građevini? Prijavite se kod nas. Povezujemo radnike sa poslodavcima širom regiona.</p>
-            <a href="#form-posao" class="btn btn-primary card-cta" data-i18n="cardJobCta">Prijavi se</a>
+            <a href="#form-posao" class="btn btn-primary card-cta" data-link="worker" data-i18n="cardJobCta">Prijavi se</a>
           </article>
           <article class="card">
             <div class="card-icon" aria-hidden="true">🏗️</div>
             <h3 class="card-title" data-i18n="cardWorkersTitle">Treba vam usluga?</h3>
             <p class="card-text" data-i18n="cardWorkersText">Potrebna vam je građevinska usluga ili pomoć? Javite nam se i dogovorimo detalje.</p>
-            <a href="#form-radnike" class="btn btn-primary card-cta" data-i18n="cardWorkersCta">Kontaktirajte nas</a>
+            <a href="#form-radnike" class="btn btn-primary card-cta" data-link="service" data-i18n="cardWorkersCta">Kontaktirajte nas</a>
           </article>
         </div>
       </div>

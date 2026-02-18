@@ -1,8 +1,21 @@
 /**
- * Smooth scroll, contact form feedback, hamburger menu.
+ * Smooth scroll, contact form feedback, hamburger menu, freeform links.
  */
 (function () {
   'use strict';
+
+  // ——— Freeform links: one config drives worker / service / contact ———
+  var siteLinksEl = document.getElementById('site-links');
+  if (siteLinksEl && siteLinksEl.textContent) {
+    try {
+      var siteLinks = JSON.parse(siteLinksEl.textContent.replace(/^\s*\/\*[\s\S]*?\*\/\s*/, ''));
+      var keyMap = { worker: 'linkWorker', service: 'linkService', contact: 'linkContact' };
+      document.querySelectorAll('[data-link="worker"], [data-link="service"], [data-link="contact"]').forEach(function (el) {
+        var key = keyMap[el.getAttribute('data-link')];
+        if (key && siteLinks[key]) el.setAttribute('href', siteLinks[key]);
+      });
+    } catch (e) {}
+  }
 
   // ——— Smooth scroll for anchor links ———
   document.querySelectorAll('a[href^="#"]').forEach(function (anchor) {

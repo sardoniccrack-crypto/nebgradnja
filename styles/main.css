@@ -355,6 +355,54 @@ a:hover {
   color: white;
 }
 
+.btn-outline {
+  background: transparent;
+  color: var(--color-dark);
+  border: 2px solid var(--color-dark);
+}
+
+.btn-outline:hover {
+  background: var(--color-dark);
+  color: white;
+  text-decoration: none;
+  border-color: var(--color-dark);
+}
+
+/* ===== Freeform links bar (worker | service | contact) ===== */
+.freeform-links {
+  background: var(--color-bg-alt);
+  border-bottom: 1px solid var(--color-border);
+  padding: var(--space-sm) var(--space-md);
+}
+
+.freeform-links .container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: var(--space-sm) var(--space-lg);
+  align-items: center;
+}
+
+.freeform-links a {
+  font-weight: 600;
+  text-decoration: none;
+  color: var(--color-accent);
+}
+
+.freeform-links a:hover {
+  text-decoration: underline;
+}
+
+.freeform-links .freeform-sep {
+  color: var(--color-text-muted);
+  font-weight: 400;
+  user-select: none;
+}
+
+@media (max-width: 600px) {
+  .freeform-links .freeform-sep { display: none; }
+}
+
 /* ===== Usluge cards (mobile-first) ===== */
 .usluge {
   background: var(--color-bg-alt);
