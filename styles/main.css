@@ -185,9 +185,9 @@ a:hover {
   color: white;
 }
 
-/* Mobile-only language dropdown (replaces 3 buttons) */
+/* Language dropdown: hidden on desktop, shown only on mobile */
 .script-select {
-  display: none;
+  display: none !important;
 }
 
 .hamburger {
@@ -957,7 +957,17 @@ a:hover {
   }
 }
 
-/* ===== Mobile: compact header + language dropdown ===== */
+/* ===== Desktop: ensure only buttons show, never the dropdown ===== */
+@media (min-width: 601px) {
+  .script-switcher {
+    display: flex !important;
+  }
+  .script-select {
+    display: none !important;
+  }
+}
+
+/* ===== Mobile: compact header + language dropdown only ===== */
 @media (max-width: 600px) {
   .header-inner {
     padding-top: var(--space-xs);
@@ -978,7 +988,7 @@ a:hover {
   }
 
   .script-select {
-    display: block;
+    display: block !important;
     min-height: 36px;
     padding: 0 var(--space-sm);
     font-family: inherit;
