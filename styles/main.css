@@ -98,6 +98,7 @@ a:hover {
   display: flex;
   align-items: center;
   justify-content: space-between;
+  gap: var(--space-md);
   padding: var(--space-sm) var(--space-md);
   max-width: 1100px;
   margin: 0 auto;
@@ -112,6 +113,7 @@ a:hover {
   text-decoration: none;
   min-width: 0;
   flex-shrink: 0;
+  align-self: center;
 }
 
 .logo:hover {
@@ -124,19 +126,19 @@ a:hover {
 }
 
 .logo-img {
-  height: 54px;
+  height: 48px;
   width: auto;
   object-fit: contain;
   display: block;
+  vertical-align: middle;
 }
 
 .logo-word {
-  font-size: 1.25rem;
+  font-size: 1.15rem;
   font-weight: 700;
   color: #1E3D59;
   letter-spacing: 0.02em;
   line-height: 1;
-  height: 54px;
   display: flex;
   align-items: center;
   white-space: nowrap;
@@ -154,6 +156,7 @@ a:hover {
   border: 1px solid var(--color-border);
   border-radius: var(--radius);
   overflow: hidden;
+  align-items: stretch;
 }
 
 .script-btn {
@@ -168,6 +171,9 @@ a:hover {
   color: var(--color-text);
   cursor: pointer;
   transition: background 0.2s, color 0.2s;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
 }
 
 .script-btn:hover {
@@ -177,6 +183,11 @@ a:hover {
 .script-btn.active {
   background: var(--color-accent);
   color: white;
+}
+
+/* Mobile-only language dropdown (replaces 3 buttons) */
+.script-select {
+  display: none;
 }
 
 .hamburger {
@@ -946,21 +957,65 @@ a:hover {
   }
 }
 
-/* ===== Mobile: prevent overflow and align logo ===== */
-@media (max-width: 480px) {
+/* ===== Mobile: compact header + language dropdown ===== */
+@media (max-width: 600px) {
   .header-inner {
-    padding-left: var(--space-sm);
-    padding-right: var(--space-sm);
+    padding-top: var(--space-xs);
+    padding-bottom: var(--space-xs);
+    gap: var(--space-sm);
   }
 
   .logo-img {
-    height: 44px;
-    width: auto;
+    height: 42px;
   }
 
   .logo-word {
     font-size: 1rem;
-    height: 44px;
+  }
+
+  .script-switcher {
+    display: none !important;
+  }
+
+  .script-select {
+    display: block;
+    min-height: 36px;
+    padding: 0 var(--space-sm);
+    font-family: inherit;
+    font-size: 0.875rem;
+    font-weight: 500;
+    color: var(--color-text);
+    background: var(--color-bg);
+    border: 1px solid var(--color-border);
+    border-radius: var(--radius);
+    cursor: pointer;
+    appearance: none;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' viewBox='0 0 12 12'%3E%3Cpath fill='%2364748b' d='M6 8L1 3h10z'/%3E%3C/svg%3E");
+    background-repeat: no-repeat;
+    background-position: right var(--space-sm) center;
+    padding-right: 2rem;
+  }
+
+  .script-select:focus {
+    outline: 2px solid var(--color-accent);
+    outline-offset: 1px;
+  }
+}
+
+@media (max-width: 480px) {
+  .header-inner {
+    padding-left: var(--space-sm);
+    padding-right: var(--space-sm);
+    gap: var(--space-sm);
+  }
+
+  .logo-img {
+    height: 40px;
+    width: auto;
+  }
+
+  .logo-word {
+    font-size: 0.9375rem;
   }
 
   .hero-ctas .btn {

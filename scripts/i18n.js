@@ -55,7 +55,7 @@
       formError: 'Došlo je do greške. Pokušajte ponovo.',
       contactDirect: 'Ili nas pozovite / pišite direktno',
       contactAddress: 'Beograd, Srbija',
-      footerCopy: '© 2025 Nebgradnja. Sva prava zadržana.'
+      footerCopy: '© 2026 Nebgradnja. Sva prava zadržana.'
     },
     'sr-Cyrl': {
       metaTitle: 'Небградња — Грађевинска фирма',
@@ -101,7 +101,7 @@
       formError: 'Дошло је до грешке. Покушајте поново.',
       contactDirect: 'Или нас позовите / пишите директно',
       contactAddress: 'Београд, Србија',
-      footerCopy: '© 2025 Небградња. Сва права задржана.'
+      footerCopy: '© 2026 Небградња. Сва права задржана.'
     },
     'en': {
       metaTitle: 'Nebgradnja — Construction Company',
@@ -147,7 +147,7 @@
       formError: 'Something went wrong. Please try again.',
       contactDirect: 'Or call / email us directly',
       contactAddress: 'Belgrade, Serbia',
-      footerCopy: '© 2025 Nebgradnja. All rights reserved.'
+      footerCopy: '© 2026 Nebgradnja. All rights reserved.'
     }
   };
 
@@ -202,6 +202,8 @@
       btn.classList.toggle('active', isActive);
       btn.setAttribute('aria-pressed', isActive ? 'true' : 'false');
     });
+    var select = document.getElementById('script-select');
+    if (select) select.value = script;
   }
 
   function switchScript(script) {
@@ -221,6 +223,14 @@
         if (s === LATN || s === CYRL || s === ENG) switchScript(s);
       });
     });
+
+    var select = document.getElementById('script-select');
+    if (select) {
+      select.addEventListener('change', function () {
+        var s = this.value;
+        if (s === LATN || s === CYRL || s === ENG) switchScript(s);
+      });
+    }
   }
 
   if (document.readyState === 'loading') {
