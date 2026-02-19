@@ -197,11 +197,6 @@
   }
 
   function setActiveButton(script) {
-    document.querySelectorAll('.script-btn').forEach(function (btn) {
-      var isActive = btn.getAttribute('data-script') === script;
-      btn.classList.toggle('active', isActive);
-      btn.setAttribute('aria-pressed', isActive ? 'true' : 'false');
-    });
     var select = document.getElementById('script-select');
     if (select) select.value = script;
   }
@@ -216,13 +211,6 @@
     var script = getStoredScript();
     applyContent(script);
     setActiveButton(script);
-
-    document.querySelectorAll('.script-btn').forEach(function (btn) {
-      btn.addEventListener('click', function () {
-        var s = this.getAttribute('data-script');
-        if (s === LATN || s === CYRL || s === ENG) switchScript(s);
-      });
-    });
 
     var select = document.getElementById('script-select');
     if (select) {

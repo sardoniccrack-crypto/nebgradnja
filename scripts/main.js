@@ -4,19 +4,6 @@
 (function () {
   'use strict';
 
-  var MOBILE_BREAK = 600;
-
-  // ——— Language switcher UI: only one visible (dropdown on mobile, buttons on desktop) ———
-  function updateLangSwitcherVisibility() {
-    var isMobile = window.innerWidth <= MOBILE_BREAK;
-    var select = document.getElementById('script-select');
-    var switcher = document.querySelector('.script-switcher');
-    if (select) select.style.setProperty('display', isMobile ? 'block' : 'none', 'important');
-    if (switcher) switcher.style.setProperty('display', isMobile ? 'none' : 'flex', 'important');
-  }
-  updateLangSwitcherVisibility();
-  window.addEventListener('resize', updateLangSwitcherVisibility);
-
   // ——— Freeform links: one config drives worker / service / contact ———
   var siteLinksEl = document.getElementById('site-links');
   if (siteLinksEl && siteLinksEl.textContent) {

@@ -97,8 +97,8 @@ a:hover {
 .header-inner {
   display: flex;
   align-items: center;
-  justify-content: space-between;
-  gap: var(--space-md);
+  justify-content: flex-start;
+  gap: var(--space-sm);
   padding: var(--space-sm) var(--space-md);
   max-width: 1100px;
   margin: 0 auto;
@@ -129,6 +129,7 @@ a:hover {
   height: 48px;
   width: auto;
   object-fit: contain;
+  object-position: center;
   display: block;
   flex-shrink: 0;
 }
@@ -141,9 +142,12 @@ a:hover {
   line-height: 1;
   display: flex;
   align-items: center;
+  justify-content: center;
   white-space: nowrap;
   height: 48px;
   box-sizing: border-box;
+  /* Align text middle axis with logo middle axis (nudge up) */
+  transform: translateY(-4px);
 }
 
 .header-right {
@@ -151,45 +155,36 @@ a:hover {
   align-items: center;
   gap: var(--space-sm);
   flex-shrink: 0;
+  /* Match logo-word nudge so dropdown and nav align on same middle axis */
+  transform: translateY(-4px);
 }
 
-.script-switcher {
-  display: flex;
-  border: 1px solid var(--color-border);
-  border-radius: var(--radius);
-  overflow: hidden;
-  align-items: stretch;
-}
-
-.script-btn {
-  min-height: var(--tap-min);
-  min-width: 44px;
-  padding: 0 var(--space-sm);
+/* Single language dropdown (all viewports) */
+.script-select {
+  min-height: 40px;
+  padding: 0 var(--space-md);
   font-family: inherit;
   font-size: 0.875rem;
   font-weight: 500;
-  border: none;
-  background: var(--color-bg);
   color: var(--color-text);
+  background: var(--color-bg);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius);
   cursor: pointer;
-  transition: background 0.2s, color 0.2s;
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
+  appearance: none;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' viewBox='0 0 12 12'%3E%3Cpath fill='%2364748b' d='M6 8L1 3h10z'/%3E%3C/svg%3E");
+  background-repeat: no-repeat;
+  background-position: right var(--space-sm) center;
+  padding-right: 2rem;
 }
 
-.script-btn:hover {
-  background: var(--color-border);
+.script-select:hover {
+  border-color: var(--color-accent);
 }
 
-.script-btn.active {
-  background: var(--color-accent);
-  color: white;
-}
-
-/* Language dropdown: hidden on desktop, shown only on mobile */
-.script-select {
-  display: none !important;
+.script-select:focus {
+  outline: 2px solid var(--color-accent);
+  outline-offset: 1px;
 }
 
 .hamburger {
@@ -959,17 +954,7 @@ a:hover {
   }
 }
 
-/* ===== Desktop: ensure only buttons show, never the dropdown ===== */
-@media (min-width: 601px) {
-  .script-switcher {
-    display: flex !important;
-  }
-  .script-select {
-    display: none !important;
-  }
-}
-
-/* ===== Mobile: compact header + language dropdown only ===== */
+/* ===== Mobile: compact header ===== */
 @media (max-width: 600px) {
   .header-inner {
     padding-top: var(--space-xs);
@@ -986,32 +971,11 @@ a:hover {
     height: 42px;
   }
 
-  .script-switcher {
-    display: none !important;
-  }
-
   .script-select {
-    display: block !important;
     min-height: 36px;
     padding: 0 var(--space-sm);
-    font-family: inherit;
-    font-size: 0.875rem;
-    font-weight: 500;
-    color: var(--color-text);
-    background: var(--color-bg);
-    border: 1px solid var(--color-border);
-    border-radius: var(--radius);
-    cursor: pointer;
-    appearance: none;
-    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' viewBox='0 0 12 12'%3E%3Cpath fill='%2364748b' d='M6 8L1 3h10z'/%3E%3C/svg%3E");
-    background-repeat: no-repeat;
-    background-position: right var(--space-sm) center;
-    padding-right: 2rem;
-  }
-
-  .script-select:focus {
-    outline: 2px solid var(--color-accent);
-    outline-offset: 1px;
+    padding-right: 1.75rem;
+    font-size: 0.8125rem;
   }
 }
 
