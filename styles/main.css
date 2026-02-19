@@ -32,6 +32,8 @@
 
 html {
   scroll-behavior: smooth;
+  overflow-x: hidden;
+  width: 100%;
 }
 
 body {
@@ -41,6 +43,9 @@ body {
   line-height: 1.6;
   color: var(--color-text);
   background: var(--color-bg);
+  overflow-x: hidden;
+  width: 100%;
+  min-width: 0;
 }
 
 img {
@@ -85,6 +90,8 @@ a:hover {
   background: var(--color-bg-alt);
   border-bottom: 1px solid var(--color-border);
   box-shadow: var(--shadow);
+  width: 100%;
+  overflow-x: hidden;
 }
 
 .header-inner {
@@ -94,6 +101,8 @@ a:hover {
   padding: var(--space-sm) var(--space-md);
   max-width: 1100px;
   margin: 0 auto;
+  width: 100%;
+  min-width: 0;
 }
 
 .logo {
@@ -101,6 +110,8 @@ a:hover {
   align-items: center;
   gap: var(--space-sm);
   text-decoration: none;
+  min-width: 0;
+  flex-shrink: 0;
 }
 
 .logo:hover {
@@ -128,14 +139,14 @@ a:hover {
   height: 54px;
   display: flex;
   align-items: center;
-  transform: translateY(-3px);
+  white-space: nowrap;
 }
 
 .header-right {
   display: flex;
   align-items: center;
   gap: var(--space-sm);
-  transform: translateY(-3px);
+  flex-shrink: 0;
 }
 
 .script-switcher {
@@ -262,10 +273,13 @@ a:hover {
   position: absolute;
   left: 50%;
   top: 50%;
-  width: 100vmax;
-  height: 100vmax;
+  min-width: 100%;
+  min-height: 100%;
+  width: auto;
+  height: auto;
+  max-width: none;
   object-fit: cover;
-  transform: translate(-50%, -50%) rotate(-90deg);
+  transform: translate(-50%, -50%);
   display: block;
 }
 
@@ -773,11 +787,6 @@ a:hover {
   .logo-word {
     font-size: 1.35rem;
     height: 58px;
-    transform: translateY(-4px);
-  }
-
-  .header-right {
-    transform: translateY(-4px);
   }
 
   .hamburger {
@@ -934,5 +943,28 @@ a:hover {
 
   .card-third {
     flex: 1 1 calc(33.333% - var(--space-lg) * 2 / 3);
+  }
+}
+
+/* ===== Mobile: prevent overflow and align logo ===== */
+@media (max-width: 480px) {
+  .header-inner {
+    padding-left: var(--space-sm);
+    padding-right: var(--space-sm);
+  }
+
+  .logo-img {
+    height: 44px;
+    width: auto;
+  }
+
+  .logo-word {
+    font-size: 1rem;
+    height: 44px;
+  }
+
+  .hero-ctas .btn {
+    min-width: 0;
+    width: 100%;
   }
 }
