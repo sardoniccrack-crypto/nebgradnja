@@ -159,7 +159,7 @@ a:hover {
   transform: translateY(-4px);
 }
 
-/* Single language dropdown (all viewports) */
+/* Single language dropdown (all viewports) – on same middle axis as logo */
 .script-select {
   min-height: 40px;
   padding: 0 var(--space-md);
@@ -176,6 +176,7 @@ a:hover {
   background-repeat: no-repeat;
   background-position: right var(--space-sm) center;
   padding-right: 2rem;
+  transform: translateY(-3px);
 }
 
 .script-select:hover {
@@ -254,6 +255,7 @@ a:hover {
   min-height: var(--tap-min);
   display: inline-flex;
   align-items: center;
+  transform: translateY(-4px);
 }
 
 .nav-link:hover {
@@ -685,7 +687,13 @@ a:hover {
 .contact-direct-intro {
   margin: 0 0 var(--space-sm);
   font-weight: 500;
+}
+
+.contact-name {
+  margin: 0 0 var(--space-xs);
+  font-weight: 600;
   color: var(--color-dark);
+  font-size: 1rem;
 }
 
 .contact-messengers {
@@ -955,12 +963,12 @@ a:hover {
   }
 }
 
-/* ===== Mobile: compact header, hamburger at right edge ===== */
+/* ===== Mobile: compact header, hamburger at right edge, less space below logo ===== */
 @media (max-width: 600px) {
   .header-inner {
     position: relative;
     padding-top: var(--space-xs);
-    padding-bottom: var(--space-xs);
+    padding-bottom: 2px;
     padding-right: 0;
     gap: var(--space-sm);
   }
@@ -990,7 +998,7 @@ a:hover {
     padding: 0 var(--space-sm);
     padding-right: 1.75rem;
     font-size: 0.8125rem;
-    transform: translateY(-4px);
+    transform: translateY(-3px);
   }
 }
 
@@ -998,6 +1006,7 @@ a:hover {
   .header-inner {
     padding-left: var(--space-sm);
     padding-right: 0;
+    padding-bottom: 2px;
     gap: var(--space-sm);
   }
 
