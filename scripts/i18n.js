@@ -13,7 +13,7 @@
   var content = {
     'sr-Latn': {
       metaTitle: 'Nebgradnja — Građevinska firma',
-      logo: 'Nebgradnja',
+      logo: 'NEBGRADNJA',
       navHome: 'Početna',
       navServices: 'Usluge',
       navAbout: 'O nama',
@@ -105,7 +105,7 @@
     },
     'en': {
       metaTitle: 'Nebgradnja — Construction Company',
-      logo: 'Nebgradnja',
+      logo: 'NEBGRADNJA',
       navHome: 'Home',
       navServices: 'Services',
       navAbout: 'About us',
@@ -207,24 +207,32 @@
     setActiveButton(script);
   }
 
+  function attachSelectListener() {
+    var select = document.getElementById('script-select');
+    if (!select || select.getAttribute('data-i18n-bound')) return;
+    select.setAttribute('data-i18n-bound', 'true');
+    select.addEventListener('change', function () {
+      var s = this.value;
+      if (s === LATN || s === CYRL || s === ENG) switchScript(s);
+    });
+  }
+
   function initSwitcher() {
     var script = getStoredScript();
     applyContent(script);
     setActiveButton(script);
+    attachSelectListener();
+  }
 
-    var select = document.getElementById('script-select');
-    if (select) {
-      select.addEventListener('change', function () {
-        var s = this.value;
-        if (s === LATN || s === CYRL || s === ENG) switchScript(s);
-      });
-    }
+  function runInit() {
+    initSwitcher();
+    if (!document.getElementById('script-select')) setTimeout(initSwitcher, 100);
   }
 
   if (document.readyState === 'loading') {
-    document.addEventListener('DOMContentLoaded', initSwitcher);
+    document.addEventListener('DOMContentLoaded', runInit);
   } else {
-    initSwitcher();
+    runInit();
   }
 
   function getString(key) {
