@@ -5,6 +5,18 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title data-i18n="metaTitle">Nebgradnja — Građevinska firma</title>
   <meta name="description" content="Nebgradnja povezuje građevinske radnike i poslodavce. Deset godina iskustva. Tražite posao ili uslugu? Jednostavno, brzo, pouzdano. Beograd, Srbija.">
+  <!-- Open Graph -->
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Nebgradnja — Građevinska firma | Radnici i poslodavci, Beograd">
+  <meta property="og:description" content="Nebgradnja povezuje građevinske radnike i poslodavce. Deset godina iskustva. Tražite posao ili uslugu? Jednostavno, brzo, pouzdano. Beograd, Srbija.">
+  <meta property="og:url" id="og-url" content="">
+  <meta property="og:image" id="og-image" content="">
+  <meta property="og:locale" content="sr_RS">
+  <!-- X (Twitter) Card -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Nebgradnja — Građevinska firma | Radnici i poslodavci, Beograd">
+  <meta name="twitter:description" content="Nebgradnja povezuje građevinske radnike i poslodavce. Deset godina iskustva. Tražite posao ili uslugu? Jednostavno, brzo, pouzdano. Beograd, Srbija.">
+  <meta name="twitter:image" id="twitter-image" content="">
   <link rel="canonical" id="canonical" href="">
   <link rel="icon" type="image/svg+xml" href="assets/favicon.svg">
   <link rel="icon" type="image/png" href="assets/logo.png" sizes="any">
@@ -90,10 +102,55 @@
       <div class="container">
         <h2 class="section-title" data-i18n="aboutTitle">O nama</h2>
         <p class="about-intro" data-i18n="aboutTrust">Nebgradnja je građevinska firma sa deset godina iskustva u povezivanju radnika i poslodavaca i u pružanju građevinskih usluga. Našu pouzdanost stežemo kroz iskren odnos, jasan dogovor i isporuku obećanog — nismo kao drugi koji obećavaju a ne ispunjavaju. Radnici i investitori nam veruju jer dugo radimo u struci, poznajemo teren i stojimo iza svake reči.</p>
-        <div class="video-placeholder">
+
+        <!-- Mobile: all 4 principles stacked (same order as before) -->
+        <div class="principles-mobile" role="list">
+          <div class="about-principle" role="listitem">
+            <span class="principle-symbol" aria-hidden="true"><svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M20 7h-9M14 17H5"/><circle cx="17" cy="17" r="3"/><circle cx="7" cy="7" r="3"/></svg></span>
+            <strong class="about-principle-title" data-i18n="aboutPro1Title">Profesionalizam</strong>
+            <p class="about-principle-text" data-i18n="aboutPro1Text">Posedujemo svo znanje i alate za pravilno izračunavanje parametara skele; uvek se trudimo da ispunimo očekivanja naših kupaca.</p>
+          </div>
+          <div class="about-principle" role="listitem">
+            <span class="principle-symbol" aria-hidden="true"><svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg></span>
+            <strong class="about-principle-title" data-i18n="aboutPro2Title">Sigurnost i standardi</strong>
+            <p class="about-principle-text" data-i18n="aboutPro2Text">Stabilna konstrukcija skele sigurna je za osobe koje rade na visini. Skele poseduju sve potrebne sertifikate i zadovoljavaju bezbednosne standarde.</p>
+          </div>
+          <div class="about-principle" role="listitem">
+            <span class="principle-symbol" aria-hidden="true"><svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M16 3h5v5M8 3H3v5M21 8v8a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8M3 16h18"/></svg></span>
+            <strong class="about-principle-title" data-i18n="aboutPro3Title">Fleksibilnost</strong>
+            <p class="about-principle-text" data-i18n="aboutPro3Text">Naši kupci mogu da biraju u okviru širokog spektra proizvoda kako bi zadovoljili svoje potrebe i očekivanja.</p>
+          </div>
+          <div class="about-principle" role="listitem">
+            <span class="principle-symbol" aria-hidden="true"><svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg></span>
+            <strong class="about-principle-title" data-i18n="aboutPro4Title">Garancija kvaliteta</strong>
+            <p class="about-principle-text" data-i18n="aboutPro4Text">Nudimo skele odličnog kvaliteta napravljene sa velikom pažnjom prema detaljima po pristupačnim cenama.</p>
+          </div>
+        </div>
+
+        <!-- Mobile: video below principles -->
+        <div class="video-placeholder video-placeholder-mobile">
           <video class="about-video" src="assets/video.mp4" controls playsinline preload="metadata" aria-label="Nebgradnja video">
             <p data-i18n="videoPlaceholder">Video će biti dodato</p>
           </video>
+        </div>
+
+        <!-- Desktop: Profesionalizam | Video | Sigurnost i standardi -->
+        <div class="about-video-row">
+          <div class="principle-side principle-video-left">
+            <span class="principle-symbol" aria-hidden="true"><svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M20 7h-9M14 17H5"/><circle cx="17" cy="17" r="3"/><circle cx="7" cy="7" r="3"/></svg></span>
+            <strong class="about-principle-title" data-i18n="aboutPro1Title">Profesionalizam</strong>
+            <p class="about-principle-text" data-i18n="aboutPro1TextDesktop">Stručno izračunavanje parametara skele i građevinske usluge po meri. Znanje i alati za preciznost; uvek ispunjavamo očekivanja investitora i kupaca.</p>
+          </div>
+          <div class="video-placeholder">
+            <video class="about-video" src="assets/video.mp4" controls playsinline preload="metadata" aria-label="Nebgradnja video">
+              <p data-i18n="videoPlaceholder">Video će biti dodato</p>
+            </video>
+          </div>
+          <div class="principle-side principle-video-right">
+            <span class="principle-symbol" aria-hidden="true"><svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg></span>
+            <strong class="about-principle-title" data-i18n="aboutPro2Title">Sigurnost i standardi</strong>
+            <p class="about-principle-text" data-i18n="aboutPro2TextDesktop">Bezbednost na radu i rad na visini: sertifikovane skele, stabilna konstrukcija i usklađenost sa bezbednosnim standardima.</p>
+          </div>
         </div>
       </div>
     </section>
@@ -101,6 +158,14 @@
     <section id="galerija" class="section gallery">
       <div class="container">
         <h2 class="section-title" data-i18n="galleryTitle">Galerija</h2>
+        <!-- Desktop: Fleksibilnost | Gallery | Garancija kvaliteta -->
+        <div class="gallery-row">
+          <div class="principle-side principle-gallery-left">
+            <span class="principle-symbol" aria-hidden="true"><svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M16 3h5v5M8 3H3v5M21 8v8a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8M3 16h18"/></svg></span>
+            <strong class="about-principle-title" data-i18n="aboutPro3Title">Fleksibilnost</strong>
+            <p class="about-principle-text" data-i18n="aboutPro3TextDesktop">Širok asortiman i prilagodljivost: građevinski materijali i usluge po vašim potrebama. Birajte opcije koje odgovaraju projektu.</p>
+          </div>
+          <div class="gallery-center">
         <div class="gallery-slider">
           <button type="button" class="gallery-arrow gallery-prev" aria-label="Prethodna slika">
             <span aria-hidden="true">‹</span>
@@ -141,6 +206,13 @@
           </button>
         </div>
         <p class="gallery-counter" aria-live="polite"><span class="gallery-current">1</span> / 9</p>
+          </div>
+          <div class="principle-side principle-gallery-right">
+            <span class="principle-symbol" aria-hidden="true"><svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg></span>
+            <strong class="about-principle-title" data-i18n="aboutPro4Title">Garancija kvaliteta</strong>
+            <p class="about-principle-text" data-i18n="aboutPro4TextDesktop">Kvalitet materijala i dugotrajnost: skele i građevinske usluge sa pažnjom prema detaljima, po povoljnim cenama.</p>
+          </div>
+        </div>
       </div>
     </section>
 
@@ -211,6 +283,6 @@
 
   <script src="scripts/i18n.js?v=2"></script>
   <script src="scripts/main.js?v=2"></script>
-  <script>(function(){var c=document.getElementById('canonical');if(c){var p=window.location.pathname.replace(/\/?index\.html$/, '') || '/'; c.href = window.location.origin + p;}})();</script>
+  <script>(function(){var o=window.location.origin,p=window.location.pathname,d=p.replace(/[^/]*$/, '')||'/';var b=o+d; var c=document.getElementById('canonical');if(c){var h=p.replace(/\/?index\.html$/, '')||'/'; c.href=o+h;} var u=document.getElementById('og-url'),i=document.getElementById('og-image'),t=document.getElementById('twitter-image');if(u)u.content=o+(p.replace(/\/?index\.html$/, '')||'/');if(i)i.content=b+'assets/hero.png';if(t)t.content=b+'assets/hero.png';})();</script>
 </body>
 </html>
