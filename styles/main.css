@@ -789,6 +789,31 @@ a:hover {
   text-decoration: none;
 }
 
+.footer-socials {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: var(--space-md);
+}
+
+.footer-social {
+  color: #94a3b8;
+  padding: var(--space-xs);
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  transition: color 0.2s;
+}
+
+.footer-social:hover {
+  color: white;
+}
+
+.footer-social svg {
+  width: 24px;
+  height: 24px;
+}
+
 .footer-contacts {
   display: flex;
   flex-direction: column;

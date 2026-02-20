@@ -12,7 +12,7 @@
 
   var content = {
     'sr-Latn': {
-      metaTitle: 'Nebgradnja — Građevinska firma',
+      metaTitle: 'Nebgradnja — Građevinska firma | Radnici i poslodavci, Beograd',
       logo: 'NEBGRADNJA',
       navHome: 'Početna',
       navServices: 'Usluge',
@@ -58,7 +58,7 @@
       footerCopy: '© 2026 Nebgradnja. Sva prava zadržana.'
     },
     'sr-Cyrl': {
-      metaTitle: 'Небградња — Грађевинска фирма',
+      metaTitle: 'Небградња — Грађевинска фирма | Радници и послодавци, Београд',
       logo: 'Небградња',
       navHome: 'Почетна',
       navServices: 'Услуге',
@@ -104,7 +104,7 @@
       footerCopy: '© 2026 Небградња. Сва права задржана.'
     },
     'en': {
-      metaTitle: 'Nebgradnja — Construction Company',
+      metaTitle: 'Nebgradnja — Construction Company | Workers & Employers, Belgrade',
       logo: 'NEBGRADNJA',
       navHome: 'Home',
       navServices: 'Services',
