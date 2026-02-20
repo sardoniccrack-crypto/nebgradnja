@@ -278,19 +278,21 @@ a:hover {
   position: absolute;
   inset: 0;
   z-index: 0;
+  overflow: hidden;
 }
 
 .hero-image {
   position: absolute;
   left: 50%;
   top: 50%;
-  /* Image is stored rotated 90° CW; rotate back so building stands upright, sky on top */
+  /* Rotate back so building stands upright, sky on top */
   min-width: 100vh;
   min-height: 100vw;
   width: auto;
   height: auto;
   max-width: none;
   object-fit: cover;
+  object-position: center center;
   transform: translate(-50%, -50%) rotate(-90deg);
   display: block;
 }
@@ -628,12 +630,7 @@ a:hover {
   background: var(--color-bg-alt);
 }
 
-@media (min-width: 900px) {
-  .gallery .container {
-    max-width: 1280px;
-  }
-}
-
+/* Desktop: same container width as O nama so left/right principle boxes align */
 /* Desktop: Fleksibilnost | Gallery | Garancija kvaliteta */
 .gallery-row {
   display: flex;
