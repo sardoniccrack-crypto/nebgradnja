@@ -9,7 +9,7 @@
   if (siteLinksEl && siteLinksEl.textContent) {
     try {
       var siteLinks = JSON.parse(siteLinksEl.textContent.replace(/^\s*\/\*[\s\S]*?\*\/\s*/, ''));
-      var keyMap = { worker: 'linkWorker', service: 'linkService', contact: 'linkContact' };
+      var keyMap = { worker: 'linkWorker', service: 'linkService', skela: 'linkSkela', contact: 'linkContact' };
       document.querySelectorAll('[data-link="worker"], [data-link="service"], [data-link="contact"]').forEach(function (el) {
         var key = keyMap[el.getAttribute('data-link')];
         if (key && siteLinks[key]) el.setAttribute('href', siteLinks[key]);
@@ -90,7 +90,7 @@
   var mainSuccess = document.getElementById('form-success');
   if (mainForm && mainSuccess) handleFormSubmit(mainForm, mainSuccess);
 
-  document.querySelectorAll('.form-section-form').forEach(function (form) {
+  document.querySelectorAll('.form-section-form:not(.scheduling-form)').forEach(function (form) {
     var wrap = form.closest('.form-section-form-wrap');
     var success = wrap ? wrap.querySelector('.form-section-success') : null;
     if (success) handleFormSubmit(form, success);
@@ -116,17 +116,4 @@
   if (nextBtn) nextBtn.addEventListener('click', function () { setSlide(current + 1); });
   setSlide(0);
 
-  // ——— Form section: match image column height to form (so image does not extend past Pošalji) ———
-  function matchFormImageHeights() {
-    document.querySelectorAll('.form-section-grid').forEach(function (grid) {
-      if (grid.offsetWidth < 700) return;
-      var formWrap = grid.querySelector('.form-section-form-wrap');
-      var imageWrap = grid.querySelector('.form-section-image');
-      if (formWrap && imageWrap) {
-        imageWrap.style.height = formWrap.offsetHeight + 'px';
-      }
-    });
-  }
-  matchFormImageHeights();
-  window.addEventListener('resize', matchFormImageHeights);
 })();

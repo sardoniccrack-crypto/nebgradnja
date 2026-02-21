@@ -6,17 +6,17 @@
   <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
   <meta http-equiv="Pragma" content="no-cache">
   <meta http-equiv="Expires" content="0">
-  <title data-i18n="metaTitle">Nebgradnja — Tražite posao?</title>
-  <meta name="description" content="Tražite posao u građevini? Prijavite se kod Nebgradnje. Povezujemo radnike sa poslodavcima. Beograd, Srbija.">
+  <title data-i18n="metaTitleSkela">Nebgradnja — Prodaja skela</title>
+  <meta name="description" content="Prodaja i iznajmljivanje skela. Ponuda skela i građevinskog materijala. Beograd, Srbija. Kontaktirajte nas za cenovnik.">
   <meta property="og:type" content="website">
-  <meta property="og:title" content="Nebgradnja — Tražite posao?">
-  <meta property="og:description" content="Tražite posao u građevini? Prijavite se kod Nebgradnje. Povezujemo radnike sa poslodavcima. Beograd, Srbija.">
+  <meta property="og:title" content="Nebgradnja — Prodaja skela">
+  <meta property="og:description" content="Prodaja i iznajmljivanje skela. Ponuda skela i građevinskog materijala. Beograd, Srbija.">
   <meta property="og:url" id="og-url" content="">
   <meta property="og:image" id="og-image" content="">
   <meta property="og:locale" content="sr_RS">
   <meta name="twitter:card" content="summary_large_image">
-  <meta name="twitter:title" content="Nebgradnja — Tražite posao?">
-  <meta name="twitter:description" content="Tražite posao u građevini? Prijavite se kod Nebgradnje. Povezujemo radnike sa poslodavcima. Beograd, Srbija.">
+  <meta name="twitter:title" content="Nebgradnja — Prodaja skela">
+  <meta name="twitter:description" content="Prodaja i iznajmljivanje skela. Ponuda skela i građevinskog materijala. Beograd, Srbija.">
   <meta name="twitter:image" id="twitter-image" content="">
   <link rel="canonical" id="canonical" href="">
   <link rel="icon" type="image/svg+xml" href="assets/favicon.svg">
@@ -58,28 +58,23 @@
   <main>
     <section class="section form-section form-page">
       <div class="container">
-        <h1 class="section-title" data-i18n="cardJobTitle">Tražite posao?</h1>
+        <h1 class="section-title" data-i18n="cardSkelaTitle">Prodaja skela</h1>
         <div class="form-section-grid">
           <div class="form-section-image form-section-image--contain">
-            <img src="assets/form-posao.png" alt="" width="548" height="731">
+            <img src="assets/form-skela.png" alt="Kamion sa skelama" width="769" height="1026">
           </div>
           <div class="form-section-form-wrap">
-            <form class="scheduling-form form-section-form" data-type="posao" action="https://formspree.io/f/xkovzrvr" method="POST" enctype="multipart/form-data">
-              <input type="hidden" name="request_type" value="posao">
+            <form class="scheduling-form form-section-form" data-type="skela" action="https://formspree.io/f/xkovzrvr" method="POST">
+              <input type="hidden" name="request_type" value="skela">
               <input type="text" name="_gotcha" tabindex="-1" autocomplete="off" class="hidden" aria-hidden="true">
-              <label for="posao-name"><span data-i18n="formName">Ime i prezime</span><input type="text" id="posao-name" name="name" required minlength="2" autocomplete="name" placeholder="npr. Petar Petrović"></label>
-              <label for="posao-email"><span data-i18n="formEmail">Email</span><input type="email" id="posao-email" name="email" required autocomplete="email" placeholder="npr. vas@email.rs"></label>
-              <label for="posao-phone"><span data-i18n="formPhone">Telefon</span><input type="tel" id="posao-phone" name="phone" autocomplete="tel" placeholder="npr. +381 62 202 115"></label>
-              <label for="posao-experience"><span data-i18n="formExperience">Iskustvo</span><textarea id="posao-experience" name="experience" rows="3" placeholder="Kratko opišite vaše iskustvo (opciono)"></textarea></label>
-              <div class="input-file-wrap">
-                <span class="input-file-label" data-i18n="formCv">CV (opciono)</span>
-                <label class="input-file-trigger" for="posao-cv"><span class="input-file-btn" data-i18n="formChooseFile">Izaberite fajl</span><span class="input-file-name" id="posao-cv-name"></span></label>
-                <input type="file" id="posao-cv" name="cv" accept=".pdf,.doc,.docx" class="input-file-native" aria-label="CV (opciono)">
-              </div>
-              <label for="posao-date"><span data-i18n="schedulePickDate">Datum</span><input type="date" id="posao-date" name="scheduled_date" required></label>
+              <label for="skela-name"><span data-i18n="formName">Ime i prezime</span><input type="text" id="skela-name" name="name" required minlength="2" autocomplete="name" placeholder="npr. Petar Petrović"></label>
+              <label for="skela-email"><span data-i18n="formEmail">Email</span><input type="email" id="skela-email" name="email" required autocomplete="email" placeholder="npr. vas@email.rs"></label>
+              <label for="skela-phone"><span data-i18n="formPhone">Telefon</span><input type="tel" id="skela-phone" name="phone" autocomplete="tel" placeholder="npr. +381 62 202 115"></label>
+              <label for="skela-message"><span data-i18n="formExtraMessage">Dodatna poruka (npr. obim posla, količina)</span><textarea id="skela-message" name="message" rows="3" placeholder="Opišite obim posla ili količinu (opciono)"></textarea></label>
+              <label for="skela-date"><span data-i18n="schedulePickDate">Datum</span><input type="date" id="skela-date" name="scheduled_date" required></label>
               <label><span data-i18n="schedulePickTime">Vreme</span></label>
-              <div id="posao-time-picker" class="schedule-time-picker"></div>
-              <input type="hidden" id="posao-time" name="scheduled_time" required>
+              <div id="skela-time-picker" class="schedule-time-picker"></div>
+              <input type="hidden" id="skela-time" name="scheduled_time" required>
               <div class="form-page-actions">
                 <button type="submit" class="btn btn-primary btn-submit" data-i18n="formSubmit">Pošalji</button>
                 <a href="index.html" class="btn btn-secondary" data-i18n="navHome">← Početna</a>

@@ -13,6 +13,7 @@
   var content = {
     'sr-Latn': {
       metaTitle: 'Nebgradnja — Građevinska firma | Radnici i poslodavci, Beograd',
+      metaTitleSkela: 'Nebgradnja — Prodaja skela',
       logo: 'NEBGRADNJA',
       navHome: 'Početna',
       navServices: 'Usluge',
@@ -23,6 +24,7 @@
       heroSubtitle: 'Povezujemo građevinske radnike i poslodavce. Jednostavno, brzo, pouzdano.',
       heroCtaJobs: 'Tražim posao',
       heroCtaWorkers: 'Treba vam usluga?',
+      heroCtaSkela: 'Prodaja skela',
       servicesTitle: 'Usluge',
       cardJobTitle: 'Tražite posao?',
       cardJobText: 'Tražite posao u građevini? Prijavite se kod nas. Povezujemo radnike sa poslodavcima širom regiona.',
@@ -30,6 +32,9 @@
       cardWorkersTitle: 'Treba vam usluga?',
       cardWorkersText: 'Potrebna vam je građevinska usluga ili pomoć? Javite nam se i dogovorimo detalje.',
       cardWorkersCta: 'Kontaktirajte nas',
+      cardSkelaTitle: 'Prodaja skela',
+      cardSkelaText: 'Kupujete ili iznajmljujete skele? Ponuda skela i građevinskog materijala. Kontaktirajte nas za cenovnik.',
+      cardSkelaCta: 'Pogledaj ponudu',
       cardServicesTitle: 'Građevinske usluge',
       cardServicesText: 'Kompletne građevinske usluge — od projekta do realizacije. Kontaktirajte nas za ponudu.',
       cardServicesCta: 'Kontakt',
@@ -65,12 +70,25 @@
       formSubmit: 'Pošalji',
       formSuccess: 'Hvala, javićemo vam se uskoro.',
       formError: 'Došlo je do greške. Pokušajte ponovo.',
+      formExperience: 'Iskustvo',
+      formCv: 'CV (opciono)',
+      formChooseFile: 'Izaberite fajl',
+      formExtraMessage: 'Dodatna poruka (npr. obim posla, količina)',
+      scheduleMinDays: 'Termin možete zakazati najmanje 2 dana unapred.',
+      schedulePickDate: 'Izaberite datum',
+      schedulePickTime: 'Izaberite vreme',
+      schedulePickDateTime: 'Izaberite datum i vreme.',
+      scheduleLocation: 'Mesto sastanka:',
+      scheduleConfirmTitle: 'Termin zakažan',
+      scheduleConfirmAddress: 'Adresa: Beograd, adresa će biti poslata nakon potvrde termina.',
+      scheduleConfirmDate: 'Datum i vreme:',
       contactDirect: 'Ili nas pozovite / pišite direktno',
       contactAddress: 'Beograd, Srbija',
       footerCopy: '© 2026 Nebgradnja. Sva prava zadržana.'
     },
     'sr-Cyrl': {
       metaTitle: 'Небградња — Грађевинска фирма | Радници и послодавци, Београд',
+      metaTitleSkela: 'Небградња — Продаја скела',
       logo: 'Небградња',
       navHome: 'Почетна',
       navServices: 'Услуге',
@@ -81,6 +99,7 @@
       heroSubtitle: 'Повезујемо грађевинске раднике и послодавце. Једноставно, брзо, поуздано.',
       heroCtaJobs: 'Тражим посао',
       heroCtaWorkers: 'Треба вам услуга?',
+      heroCtaSkela: 'Продаја скела',
       servicesTitle: 'Услуге',
       cardJobTitle: 'Тражите посао?',
       cardJobText: 'Тражите посао у грађевини? Пријавите се код нас. Повезујемо раднике са послодавцима широм региона.',
@@ -88,6 +107,9 @@
       cardWorkersTitle: 'Треба вам услуга?',
       cardWorkersText: 'Потребна вам је грађевинска услуга или помоћ? Јавите нам се и договоримо детаље.',
       cardWorkersCta: 'Контактирајте нас',
+      cardSkelaTitle: 'Продаја скела',
+      cardSkelaText: 'Купујете или изнајмљујете скеле? Понуда скела и грађевинског материјала. Контактирајте нас за ценовник.',
+      cardSkelaCta: 'Погледај понуду',
       cardServicesTitle: 'Грађевинске услуге',
       cardServicesText: 'Комплетне грађевинске услуге — од пројекта до реализације. Контактирајте нас за понуду.',
       cardServicesCta: 'Контакт',
@@ -123,12 +145,25 @@
       formSubmit: 'Пошаљи',
       formSuccess: 'Хвала, јавићемо вам се ускоро.',
       formError: 'Дошло је до грешке. Покушајте поново.',
+      formExperience: 'Искуство',
+      formCv: 'CV (опционо)',
+      formChooseFile: 'Изаберите фајл',
+      formExtraMessage: 'Додатна порука (напр. обим посла, количина)',
+      scheduleMinDays: 'Термин можете заказати најмање 2 дана унапред.',
+      schedulePickDate: 'Изаберите датум',
+      schedulePickTime: 'Изаберите време',
+      schedulePickDateTime: 'Изаберите датум и време.',
+      scheduleLocation: 'Место састанка:',
+      scheduleConfirmTitle: 'Термин заказан',
+      scheduleConfirmAddress: 'Адреса: Београд, адреса ће бити послата након потврде термина.',
+      scheduleConfirmDate: 'Датум и време:',
       contactDirect: 'Или нас позовите / пишите директно',
       contactAddress: 'Београд, Србија',
       footerCopy: '© 2026 Небградња. Сва права задржана.'
     },
     'en': {
       metaTitle: 'Nebgradnja — Construction Company | Workers & Employers, Belgrade',
+      metaTitleSkela: 'Nebgradnja — Scaffolding for sale',
       logo: 'NEBGRADNJA',
       navHome: 'Home',
       navServices: 'Services',
@@ -139,6 +174,7 @@
       heroSubtitle: 'We connect construction workers and employers. Simple, fast, reliable.',
       heroCtaJobs: 'I\'m looking for work',
       heroCtaWorkers: 'Need a service?',
+      heroCtaSkela: 'Scaffolding for sale',
       servicesTitle: 'Services',
       cardJobTitle: 'Looking for a job?',
       cardJobText: 'Looking for work in construction? Register with us. We connect workers with employers across the region.',
@@ -146,6 +182,9 @@
       cardWorkersTitle: 'Need a service?',
       cardWorkersText: 'Need a construction service or assistance? Get in touch and we\'ll work out the details.',
       cardWorkersCta: 'Contact us',
+      cardSkelaTitle: 'Scaffolding for sale',
+      cardSkelaText: 'Buying or renting scaffolding? We offer scaffolding and construction materials. Contact us for a price list.',
+      cardSkelaCta: 'View offer',
       cardServicesTitle: 'Construction services',
       cardServicesText: 'Full construction services — from design to completion. Contact us for a quote.',
       cardServicesCta: 'Contact',
@@ -181,6 +220,18 @@
       formSubmit: 'Send',
       formSuccess: 'Thank you, we\'ll get back to you soon.',
       formError: 'Something went wrong. Please try again.',
+      formExperience: 'Experience',
+      formCv: 'CV (optional)',
+      formChooseFile: 'Choose file',
+      formExtraMessage: 'Additional message (e.g. job size, quantity)',
+      scheduleMinDays: 'You can schedule at least 2 days in advance.',
+      schedulePickDate: 'Choose date',
+      schedulePickTime: 'Choose time',
+      schedulePickDateTime: 'Please choose date and time.',
+      scheduleLocation: 'Meeting location:',
+      scheduleConfirmTitle: 'Appointment scheduled',
+      scheduleConfirmAddress: 'Address: Belgrade, address will be sent after confirmation.',
+      scheduleConfirmDate: 'Date and time:',
       contactDirect: 'Or call / email us directly',
       contactAddress: 'Belgrade, Serbia',
       footerCopy: '© 2026 Nebgradnja. All rights reserved.'
@@ -226,7 +277,11 @@
     });
 
     var titleEl = document.querySelector('title');
-    if (titleEl && strings.metaTitle) titleEl.textContent = strings.metaTitle;
+    if (titleEl) {
+      var titleKey = titleEl.getAttribute('data-i18n');
+      if (titleKey && strings[titleKey]) titleEl.textContent = strings[titleKey];
+      else if (strings.metaTitle) titleEl.textContent = strings.metaTitle;
+    }
 
     var lang = script === CYRL ? 'sr-Cyrl' : script === ENG ? 'en' : 'sr';
     document.documentElement.setAttribute('lang', lang);

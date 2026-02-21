@@ -26,14 +26,15 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="styles/main.css?v=4">
+  <link rel="stylesheet" href="styles/main.css?v=25">
 </head>
 <body>
-  <!-- Edit these 3 links in one place: worker (traži posao), service (treba usluga), contact -->
+  <!-- Edit these 4 links in one place: worker, service, skela, contact -->
   <script type="application/json" id="site-links">
     {
       "linkWorker": "posao.html",
       "linkService": "usluga.html",
+      "linkSkela": "skela.html",
       "linkContact": "#kontakt"
     }
   </script>
@@ -77,10 +78,12 @@
         <div class="hero-ctas">
           <a href="posao.html" class="btn btn-primary" data-link="worker" data-i18n="heroCtaJobs">Tražim posao</a>
           <a href="usluga.html" class="btn btn-secondary" data-link="service" data-i18n="heroCtaWorkers">Treba vam usluga?</a>
+          <a href="skela.html" class="btn btn-skela" data-link="skela" data-i18n="heroCtaSkela">Prodaja skela</a>
         </div>
       </div>
     </section>
 
+    <div class="main-below-hero">
     <section id="usluge" class="section usluge">
       <div class="container">
         <h2 class="section-title" data-i18n="servicesTitle">Usluge</h2>
@@ -96,6 +99,12 @@
             <h3 class="card-title" data-i18n="cardWorkersTitle">Treba vam usluga?</h3>
             <p class="card-text" data-i18n="cardWorkersText">Potrebna vam je građevinska usluga ili pomoć? Javite nam se i dogovorimo detalje.</p>
             <a href="usluga.html" class="btn btn-primary card-cta" data-link="service" data-i18n="cardWorkersCta">Kontaktirajte nas</a>
+          </article>
+          <article class="card">
+            <div class="card-icon" aria-hidden="true">🛒</div>
+            <h3 class="card-title" data-i18n="cardSkelaTitle">Prodaja skela</h3>
+            <p class="card-text" data-i18n="cardSkelaText">Kupujete ili iznajmljujete skele? Ponuda skela i građevinskog materijala. Kontaktirajte nas za cenovnik.</p>
+            <a href="skela.html" class="btn btn-primary card-cta" data-link="skela" data-i18n="cardSkelaCta">Pogledaj ponudu</a>
           </article>
         </div>
       </div>
@@ -225,18 +234,19 @@
         <div class="contact-grid">
           <div class="contact-form-wrap">
             <form id="contact-form" class="contact-form" action="https://formspree.io/f/xkovzrvr" method="POST">
+              <input type="hidden" name="request_type" value="contact">
               <input type="text" name="_gotcha" tabindex="-1" autocomplete="off" class="hidden" aria-hidden="true">
               <label for="name">
                 <span data-i18n="formName">Ime i prezime</span>
-                <input type="text" id="name" name="name" required minlength="2" autocomplete="name">
+                <input type="text" id="name" name="name" required minlength="2" autocomplete="name" placeholder="npr. Petar Petrović">
               </label>
               <label for="email">
                 <span data-i18n="formEmail">Email</span>
-                <input type="email" id="email" name="email" required autocomplete="email">
+                <input type="email" id="email" name="email" required autocomplete="email" placeholder="npr. vas@email.rs">
               </label>
               <label for="phone">
                 <span data-i18n="formPhone">Telefon</span>
-                <input type="tel" id="phone" name="phone" autocomplete="tel">
+                <input type="tel" id="phone" name="phone" autocomplete="tel" placeholder="npr. +381 62 202 115">
               </label>
               <label for="message">
                 <span data-i18n="formMessage">Poruka</span>
@@ -252,6 +262,18 @@
               <a href="https://wa.me/38162202115" class="contact-messenger" target="_blank" rel="noopener" aria-label="WhatsApp">
                 <img src="assets/icon-whatsapp.svg" alt="" width="44" height="44">
               </a>
+              <a href="viber://chat?number=%2B38162202115" class="contact-messenger" target="_blank" rel="noopener" aria-label="Viber">
+                <img src="assets/logos/viber.png" alt="" width="44" height="44">
+              </a>
+              <a href="https://t.me/+38162202115" class="contact-messenger" target="_blank" rel="noopener" aria-label="Telegram">
+                <img src="assets/logos/telegram.png" alt="" width="44" height="44">
+              </a>
+              <a href="https://signal.me/#p/+38162202115" class="contact-messenger" target="_blank" rel="noopener" aria-label="Signal">
+                <img src="assets/logos/signal.png" alt="" width="44" height="44">
+              </a>
+              <a href="sms:+38162202115" class="contact-messenger" target="_blank" rel="noopener" aria-label="SMS">
+                <img src="assets/logos/sms.png" alt="" width="44" height="44">
+              </a>
             </div>
             <p class="contact-name">Nebojša</p>
             <a href="tel:+38162202115" class="contact-link contact-phone">+381 62 202 115</a>
@@ -261,6 +283,7 @@
         </div>
       </div>
     </section>
+    </div>
   </main>
 
   <footer class="footer">
@@ -285,7 +308,7 @@
   </footer>
 
   <script src="scripts/i18n.js?v=3"></script>
-  <script src="scripts/main.js?v=3"></script>
+  <script src="scripts/main.js?v=5"></script>
   <script>(function(){var o=window.location.origin,p=window.location.pathname,d=p.replace(/[^/]*$/, '')||'/';var b=o+d; var c=document.getElementById('canonical');if(c){var h=p.replace(/\/?index\.html$/, '')||'/'; c.href=o+h;} var u=document.getElementById('og-url'),i=document.getElementById('og-image'),t=document.getElementById('twitter-image');if(u)u.content=o+(p.replace(/\/?index\.html$/, '')||'/');if(i)i.content=b+'assets/hero.png';if(t)t.content=b+'assets/hero.png';})();</script>
 </body>
 </html>

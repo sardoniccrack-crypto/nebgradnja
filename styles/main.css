@@ -104,6 +104,8 @@ a:hover {
   margin: 0 auto;
   width: 100%;
   min-width: 0;
+  min-height: 56px;
+  box-sizing: border-box;
 }
 
 .logo {
@@ -272,6 +274,15 @@ a:hover {
   min-height: 75vh;
   padding: var(--space-xl) var(--space-md);
   overflow: hidden;
+  contain: layout paint;
+  z-index: 0;
+}
+
+/* Block hero from showing through below (stops flash at bottom) */
+.main-below-hero {
+  position: relative;
+  z-index: 1;
+  background: var(--color-bg);
 }
 
 .hero-media {
@@ -343,6 +354,24 @@ a:hover {
   min-width: 200px;
 }
 
+/* Mobile: all three buttons stacked, same width */
+@media (max-width: 767px) {
+  .hero-ctas {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-sm);
+    align-items: center;
+    max-width: 100%;
+  }
+
+  .hero-ctas .btn {
+    width: 220px;
+    min-width: 220px;
+    max-width: 220px;
+    box-sizing: border-box;
+  }
+}
+
 /* ===== Buttons ===== */
 .btn {
   font-family: inherit;
@@ -383,6 +412,17 @@ a:hover {
   color: white;
 }
 
+.btn-skela {
+  background: #0d9488;
+  color: white;
+}
+
+.btn-skela:hover {
+  background: #0f766e;
+  text-decoration: none;
+  color: white;
+}
+
 .btn-outline {
   background: transparent;
   color: var(--color-dark);
@@ -408,6 +448,8 @@ a:hover {
 }
 
 .card {
+  display: flex;
+  flex-direction: column;
   background: var(--color-bg);
   border: 1px solid var(--color-border);
   border-radius: var(--radius-lg);
@@ -428,12 +470,18 @@ a:hover {
 }
 
 .card-text {
+  flex: 1;
+  min-height: 6.5rem;
   margin: 0 0 var(--space-md);
   color: var(--color-text-muted);
+  font-size: 1rem;
+  line-height: 1.6;
 }
 
 .card-cta {
   width: 100%;
+  margin-top: 0;
+  flex-shrink: 0;
 }
 
 /* ===== Form sections (form + picture per service) ===== */
@@ -450,20 +498,29 @@ a:hover {
   flex-direction: column;
   gap: var(--space-xl);
   align-items: stretch;
+  min-width: 0;
 }
 
 .form-section-image {
   width: 100%;
-  min-height: 200px;
+  max-width: 100%;
+  overflow: hidden;
+  border-radius: var(--radius-lg);
 }
 
 .form-section-image img {
   width: 100%;
-  height: 100%;
-  min-height: 200px;
-  border-radius: var(--radius-lg);
-  object-fit: cover;
+  height: auto;
   display: block;
+  border-radius: var(--radius-lg);
+}
+
+@media (min-width: 768px) {
+  .form-section-image img {
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+  }
 }
 
 .form-section-form-wrap {
@@ -475,16 +532,166 @@ a:hover {
   margin-top: var(--space-md);
 }
 
-.form-page-back {
-  margin-top: var(--space-lg);
+.form-page-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-md);
+  align-items: center;
+  margin-top: var(--space-md);
 }
 
-.form-page-back a {
+.form-page-actions .btn {
   text-decoration: none;
 }
 
-.form-page-back a:hover {
+.form-page-actions .btn:hover {
   text-decoration: none;
+}
+
+/* ===== Scheduling (calendar + time slots) ===== */
+.schedule-intro {
+  margin-bottom: var(--space-md);
+  color: var(--color-text-muted);
+  font-size: 0.9375rem;
+}
+
+.schedule-calendar-label {
+  font-weight: 600;
+  margin-bottom: var(--space-xs);
+  color: var(--color-dark);
+}
+
+.schedule-calendar-wrap {
+  min-height: 220px;
+  margin-bottom: var(--space-sm);
+  display: block;
+}
+
+.schedule-calendar-wrap .schedule-calendar {
+  display: block;
+}
+
+.schedule-calendar {
+  margin-bottom: var(--space-md);
+}
+
+.schedule-times-wrap {
+  min-height: 52px;
+  margin-bottom: var(--space-md);
+  display: block;
+}
+
+.schedule-calendar-title {
+  font-weight: 600;
+  margin-bottom: var(--space-sm);
+  color: var(--color-dark);
+}
+
+.schedule-calendar-grid {
+  display: grid;
+  grid-template-columns: repeat(7, 1fr);
+  gap: 4px;
+  max-width: 280px;
+}
+
+.schedule-calendar-head {
+  font-size: 0.75rem;
+  color: var(--color-text-muted);
+  text-align: center;
+  padding: 4px 0;
+}
+
+.schedule-calendar-cell {
+  aspect-ratio: 1;
+  min-width: 0;
+  padding: 0;
+  font-size: 0.875rem;
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius);
+  background: var(--color-bg-alt);
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: background 0.2s, border-color 0.2s;
+}
+
+.schedule-calendar-cell:hover:not(.schedule-calendar-disabled):not(.schedule-calendar-empty) {
+  background: var(--color-accent-light);
+  border-color: var(--color-accent);
+}
+
+.schedule-calendar-cell.schedule-calendar-selected {
+  background: var(--color-accent);
+  border-color: var(--color-accent);
+  color: white;
+}
+
+.schedule-calendar-cell.schedule-calendar-disabled,
+.schedule-calendar-cell.schedule-calendar-empty {
+  cursor: default;
+  background: var(--color-bg);
+  color: var(--color-text-muted);
+  border-color: var(--color-border);
+}
+
+.schedule-calendar-empty {
+  border: none;
+  visibility: hidden;
+}
+
+.schedule-times-label {
+  font-weight: 600;
+  margin-bottom: var(--space-xs);
+  color: var(--color-dark);
+}
+
+.schedule-times {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-xs);
+  margin-bottom: var(--space-md);
+}
+
+.schedule-time-btn {
+  padding: var(--space-xs) var(--space-sm);
+  font-size: 0.875rem;
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius);
+  background: var(--color-bg-alt);
+  cursor: pointer;
+  transition: background 0.2s, border-color 0.2s;
+}
+
+.schedule-time-btn:hover:not([disabled]) {
+  background: var(--color-accent-light);
+  border-color: var(--color-accent);
+}
+
+.schedule-time-btn.schedule-time-selected {
+  background: var(--color-accent);
+  border-color: var(--color-accent);
+  color: white;
+}
+
+.schedule-time-btn.schedule-time-taken,
+.schedule-time-btn[disabled] {
+  cursor: not-allowed;
+  opacity: 0.6;
+  text-decoration: line-through;
+}
+
+.schedule-location {
+  margin-top: var(--space-sm);
+  padding: var(--space-sm);
+  background: var(--color-bg);
+  border-radius: var(--radius);
+  font-size: 0.9375rem;
+  color: var(--color-text-muted);
+}
+
+.schedule-location strong {
+  color: var(--color-text);
 }
 
 /* ===== About (mobile-first) ===== */
@@ -764,6 +971,13 @@ a:hover {
 }
 
 /* ===== Contact (mobile-first) ===== */
+.section.contact {
+  background: var(--color-bg);
+  isolation: isolate;
+  position: relative;
+  z-index: 1;
+}
+
 .contact-grid {
   display: flex;
   flex-direction: column;
@@ -780,29 +994,152 @@ a:hover {
   gap: var(--space-md);
 }
 
-.contact-form label {
+/* Shared form layout and modern input style (contact + scheduling) */
+.contact-form,
+.form-section-form {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-md);
+}
+
+.contact-form label,
+.form-section-form label {
   display: flex;
   flex-direction: column;
   gap: var(--space-xs);
   font-weight: 500;
   color: var(--color-dark);
+  font-size: 0.9375rem;
 }
 
 .contact-form input,
-.contact-form textarea {
+.contact-form textarea,
+.form-section-form input:not([type="hidden"]):not([type="file"]),
+.form-section-form select,
+.form-section-form textarea {
   font-family: inherit;
   font-size: 1rem;
-  padding: var(--space-sm);
+  padding: 0.75rem 1rem;
   border: 1px solid var(--color-border);
   border-radius: var(--radius);
   min-height: var(--tap-min);
+  background: var(--color-bg-alt);
+  color: var(--color-text);
+  transition: border-color 0.2s, box-shadow 0.2s;
+  -webkit-appearance: none;
+  appearance: none;
 }
 
-.contact-form textarea {
+.contact-form input::placeholder,
+.contact-form textarea::placeholder,
+.form-section-form input::placeholder,
+.form-section-form textarea::placeholder {
+  color: var(--color-text-muted);
+  opacity: 0.9;
+}
+
+.contact-form input:focus,
+.contact-form textarea:focus,
+.form-section-form input:not([type="hidden"]):not([type="file"]):focus,
+.form-section-form select:focus,
+.form-section-form textarea:focus {
+  outline: none;
+  border-color: var(--color-accent);
+  box-shadow: 0 0 0 3px rgba(194, 65, 12, 0.12);
+}
+
+.contact-form input:invalid:not(:placeholder-shown):not(:focus),
+.form-section-form input:not([type="hidden"]):not([type="file"]):invalid:not(:placeholder-shown):not(:focus) {
+  border-color: #e2e8f0;
+}
+
+.contact-form textarea,
+.form-section-form textarea {
   min-height: 120px;
   resize: vertical;
 }
 
+/* Custom file input — no default "Choose file" textbox, bar-style trigger */
+.input-file-wrap {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-xs);
+}
+.input-file-label {
+  font-weight: 500;
+  color: var(--color-dark);
+  font-size: 0.9375rem;
+}
+.input-file-trigger {
+  display: flex;
+  align-items: center;
+  gap: var(--space-sm);
+  padding: 0.75rem 1rem;
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius);
+  min-height: var(--tap-min);
+  background: var(--color-bg-alt);
+  cursor: pointer;
+  transition: border-color 0.2s, box-shadow 0.2s;
+}
+.input-file-trigger:hover {
+  border-color: var(--color-accent);
+}
+.input-file-trigger:focus-within {
+  outline: none;
+  border-color: var(--color-accent);
+  box-shadow: 0 0 0 3px rgba(194, 65, 12, 0.12);
+}
+.input-file-btn {
+  font-weight: 500;
+  color: var(--color-accent);
+}
+.input-file-name {
+  font-size: 0.9375rem;
+  color: var(--color-text-muted);
+}
+.input-file-native {
+  position: absolute;
+  width: 0;
+  height: 0;
+  opacity: 0;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+}
+
+/* Time picker — same style as date (discrete slots 9–18) */
+.schedule-time-picker {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-xs);
+  margin-bottom: var(--space-md);
+}
+.schedule-time-picker .schedule-time-btn {
+  padding: 0.5rem 0.75rem;
+  font-size: 0.875rem;
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius);
+  background: var(--color-bg-alt);
+  cursor: pointer;
+  transition: background 0.2s, border-color 0.2s;
+}
+.schedule-time-picker .schedule-time-btn:hover:not([disabled]) {
+  background: var(--color-accent-light);
+  border-color: var(--color-accent);
+}
+.schedule-time-picker .schedule-time-btn.selected {
+  background: var(--color-accent);
+  border-color: var(--color-accent);
+  color: white;
+}
+.schedule-time-picker .schedule-time-btn:disabled {
+  cursor: not-allowed;
+  opacity: 0.5;
+  text-decoration: line-through;
+}
+
+/* Honeypot: hide in all forms (contact + scheduling) */
+.hidden,
 .contact-form .hidden {
   position: absolute;
   width: 1px;
@@ -856,9 +1193,13 @@ a:hover {
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  width: var(--tap-min);
-  height: var(--tap-min);
+  width: 48px;
+  height: 48px;
+  min-width: 48px;
+  min-height: 48px;
+  flex-shrink: 0;
   border-radius: 50%;
+  overflow: hidden;
   transition: transform 0.2s, opacity 0.2s;
 }
 
@@ -877,10 +1218,16 @@ a:hover {
   transform: none;
 }
 
+/* Force all messenger icons to same pixel size (override img attributes) */
 .contact-messenger img {
-  width: 44px;
-  height: 44px;
+  width: 48px !important;
+  height: 48px !important;
+  min-width: 48px !important;
+  min-height: 48px !important;
+  max-width: 48px !important;
+  max-height: 48px !important;
   display: block;
+  object-fit: contain;
 }
 
 .icon-viber-img {
@@ -1019,6 +1366,13 @@ a:hover {
     justify-content: center;
   }
 
+  .hero-ctas .btn {
+    width: 220px;
+    min-width: 220px;
+    max-width: 220px;
+    box-sizing: border-box;
+  }
+
   .cards {
     flex-direction: row;
     flex-wrap: wrap;
@@ -1033,15 +1387,16 @@ a:hover {
     flex: 1 1 100%;
   }
 
-  .card-cta {
-    width: auto;
-  }
-
   .form-section-grid {
     display: grid;
-    grid-template-columns: 1fr 1fr;
+    grid-template-columns: 1.25fr 1fr;
     gap: var(--space-xl);
-    align-items: start;
+    align-items: stretch;
+    min-width: 0;
+  }
+
+  .form-section-grid > * {
+    min-width: 0;
   }
 
   .form-section--reverse .form-section-grid {
@@ -1050,20 +1405,6 @@ a:hover {
 
   .form-section--reverse .form-section-grid > * {
     direction: ltr;
-  }
-
-  .form-section-image {
-    min-height: 0;
-    display: flex;
-    overflow: hidden;
-    border-radius: var(--radius-lg);
-  }
-
-  .form-section-image img {
-    min-height: 0;
-    height: 100%;
-    width: 100%;
-    object-fit: cover;
   }
 
   .about-grid {
@@ -1138,9 +1479,44 @@ a:hover {
   }
 }
 
+/* ===== Form pages: always use large header (same as skela), no viewport dependency ===== */
+/* !important so nothing (media queries, order, other CSS) can shrink the header on posao/usluga. */
+body.form-page .header-inner {
+  min-height: 64px !important;
+  padding-top: var(--space-sm) !important;
+  padding-bottom: var(--space-sm) !important;
+  padding-right: var(--space-md) !important;
+  padding-left: var(--space-md) !important;
+  gap: var(--space-sm) !important;
+  position: relative !important;
+}
+body.form-page .logo-img {
+  height: 58px !important;
+  width: auto !important;
+}
+body.form-page .logo-word {
+  font-size: 1.35rem !important;
+  height: 58px !important;
+}
+body.form-page .script-select {
+  min-height: 40px !important;
+  padding: 0 var(--space-md) !important;
+  padding-right: 2rem !important;
+  font-size: 0.875rem !important;
+  transform: translateY(-3px) !important;
+}
+body.form-page .header-right {
+  transform: translateY(-4px) !important;
+}
+body.form-page .hamburger {
+  position: static !important;
+  transform: none !important;
+}
+
 /* ===== Mobile: compact header, hamburger at right edge, less space below logo ===== */
+/* Only on non–form pages; form pages use the block above. */
 @media (max-width: 600px) {
-  .header-inner {
+  body:not(.form-page) .header-inner {
     position: relative;
     padding-top: var(--space-xs);
     padding-bottom: 2px;
@@ -1148,27 +1524,27 @@ a:hover {
     gap: var(--space-sm);
   }
 
-  .header-right {
+  body:not(.form-page) .header-right {
     transform: none;
   }
 
-  .hamburger {
+  body:not(.form-page) .hamburger {
     position: absolute;
     right: 0;
     top: 50%;
     transform: translateY(-50%);
   }
 
-  .logo-img {
+  body:not(.form-page) .logo-img {
     height: 42px;
   }
 
-  .logo-word {
+  body:not(.form-page) .logo-word {
     font-size: 1rem;
     height: 42px;
   }
 
-  .script-select {
+  body:not(.form-page) .script-select {
     min-height: 36px;
     padding: 0 var(--space-sm);
     padding-right: 1.75rem;
@@ -1178,19 +1554,19 @@ a:hover {
 }
 
 @media (max-width: 480px) {
-  .header-inner {
+  body:not(.form-page) .header-inner {
     padding-left: var(--space-sm);
     padding-right: 0;
     padding-bottom: 2px;
     gap: var(--space-sm);
   }
 
-  .logo-img {
+  body:not(.form-page) .logo-img {
     height: 40px;
     width: auto;
   }
 
-  .logo-word {
+  body:not(.form-page) .logo-word {
     font-size: 0.9375rem;
     height: 40px;
   }

@@ -24,9 +24,9 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="styles/main.css?v=4">
+  <link rel="stylesheet" href="styles/main.css?v=25">
 </head>
-<body>
+<body class="form-page">
   <header class="header">
     <div class="header-inner">
       <a href="index.html" class="logo" aria-label="Nebgradnja početna">
@@ -56,27 +56,33 @@
   </header>
 
   <main>
-    <section class="section form-section form-section--reverse form-page">
+    <section class="section form-section form-page">
       <div class="container">
         <h1 class="section-title" data-i18n="cardWorkersTitle">Treba vam usluga?</h1>
         <div class="form-section-grid">
-          <div class="form-section-image">
-            <img src="assets/form-radnike.png" alt="" width="600" height="400">
+          <div class="form-section-image form-section-image--contain">
+            <img src="assets/form-radnike.png" alt="" width="540" height="720">
           </div>
           <div class="form-section-form-wrap">
-            <form class="contact-form form-section-form" action="https://formspree.io/f/xkovzrvr" method="POST">
-              <input type="hidden" name="request_type" value="radnike">
+            <form class="scheduling-form form-section-form" data-type="usluga" action="https://formspree.io/f/xkovzrvr" method="POST">
+              <input type="hidden" name="request_type" value="usluga">
               <input type="text" name="_gotcha" tabindex="-1" autocomplete="off" class="hidden" aria-hidden="true">
-              <label for="radnike-name"><span data-i18n="formName">Ime i prezime</span><input type="text" id="radnike-name" name="name" required minlength="2" autocomplete="name"></label>
-              <label for="radnike-email"><span data-i18n="formEmail">Email</span><input type="email" id="radnike-email" name="email" required autocomplete="email"></label>
-              <label for="radnike-phone"><span data-i18n="formPhone">Telefon</span><input type="tel" id="radnike-phone" name="phone" autocomplete="tel"></label>
-              <label for="radnike-message"><span data-i18n="formMessage">Poruka</span><textarea id="radnike-message" name="message" rows="4" required></textarea></label>
-              <button type="submit" class="btn btn-primary btn-submit" data-i18n="formSubmit">Pošalji</button>
+              <label for="usluga-name"><span data-i18n="formName">Ime i prezime</span><input type="text" id="usluga-name" name="name" required minlength="2" autocomplete="name" placeholder="npr. Petar Petrović"></label>
+              <label for="usluga-email"><span data-i18n="formEmail">Email</span><input type="email" id="usluga-email" name="email" required autocomplete="email" placeholder="npr. vas@email.rs"></label>
+              <label for="usluga-phone"><span data-i18n="formPhone">Telefon</span><input type="tel" id="usluga-phone" name="phone" autocomplete="tel" placeholder="npr. +381 62 202 115"></label>
+              <label for="usluga-message"><span data-i18n="formMessage">Poruka</span><textarea id="usluga-message" name="message" rows="3" placeholder="Dodatne napomene (opciono)"></textarea></label>
+              <label for="usluga-date"><span data-i18n="schedulePickDate">Datum</span><input type="date" id="usluga-date" name="scheduled_date" required></label>
+              <label><span data-i18n="schedulePickTime">Vreme</span></label>
+              <div id="usluga-time-picker" class="schedule-time-picker"></div>
+              <input type="hidden" id="usluga-time" name="scheduled_time" required>
+              <div class="form-page-actions">
+                <button type="submit" class="btn btn-primary btn-submit" data-i18n="formSubmit">Pošalji</button>
+                <a href="index.html" class="btn btn-secondary" data-i18n="navHome">← Početna</a>
+              </div>
             </form>
-            <p class="form-success form-section-success" role="status" aria-live="polite" hidden data-i18n="formSuccess">Hvala, javićemo vam se uskoro.</p>
+            <p class="form-success form-section-success" role="status" aria-live="polite" hidden></p>
           </div>
         </div>
-        <p class="form-page-back"><a href="index.html" class="btn btn-secondary" data-i18n="navHome">← Početna</a></p>
       </div>
     </section>
   </main>
@@ -103,7 +109,8 @@
   </footer>
 
   <script src="scripts/i18n.js?v=3"></script>
-  <script src="scripts/main.js?v=3"></script>
+  <script src="scripts/main.js?v=5"></script>
+  <script src="scripts/scheduling.js?v=6"></script>
   <script>(function(){var o=window.location.origin,b=o+window.location.pathname.replace(/[^/]*$/, ''); var c=document.getElementById('canonical'),u=document.getElementById('og-url'),i=document.getElementById('og-image'),t=document.getElementById('twitter-image'); if(c)c.href=o+window.location.pathname; if(u)u.content=o+window.location.pathname; if(i)i.content=b+'assets/hero.png'; if(t)t.content=b+'assets/hero.png';})();</script>
 </body>
 </html>
