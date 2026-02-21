@@ -36,6 +36,18 @@
     });
   });
 
+  // ——— Phone: strip non-numeric characters in real time ———
+  document.querySelectorAll('input[type="tel"]').forEach(function (input) {
+    input.addEventListener('input', function () {
+      var pos = this.selectionStart;
+      var cleaned = this.value.replace(/[^\d+\s\-()]/g, '');
+      if (cleaned !== this.value) {
+        this.value = cleaned;
+        this.setSelectionRange(pos - 1, pos - 1);
+      }
+    });
+  });
+
   // ——— Hamburger menu ———
   var hamburger = document.querySelector('.hamburger');
   var header = document.querySelector('.header');

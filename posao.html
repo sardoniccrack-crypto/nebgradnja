@@ -69,7 +69,7 @@
               <input type="text" name="_gotcha" tabindex="-1" autocomplete="off" class="hidden" aria-hidden="true">
               <label for="posao-name"><span data-i18n="formName">Ime i prezime</span><input type="text" id="posao-name" name="name" required minlength="2" autocomplete="name" placeholder="npr. Petar Petrović"></label>
               <label for="posao-email"><span data-i18n="formEmail">Email</span><input type="email" id="posao-email" name="email" required autocomplete="email" placeholder="npr. vas@email.rs"></label>
-              <label for="posao-phone"><span data-i18n="formPhone">Telefon</span><input type="tel" id="posao-phone" name="phone" autocomplete="tel" placeholder="npr. +381 62 202 115"></label>
+              <label for="posao-phone"><span data-i18n="formPhone">Telefon</span><input type="tel" id="posao-phone" name="phone" autocomplete="tel" placeholder="npr. +381 62 202 115" pattern="[+\d\s\-\(\)]*" inputmode="tel"></label>
               <label for="posao-experience"><span data-i18n="formExperience">Iskustvo</span><textarea id="posao-experience" name="experience" rows="3" placeholder="Kratko opišite vaše iskustvo (opciono)"></textarea></label>
               <div class="input-file-wrap">
                 <span class="input-file-label" data-i18n="formCv">CV (opciono)</span>

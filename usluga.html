@@ -69,7 +69,7 @@
               <input type="text" name="_gotcha" tabindex="-1" autocomplete="off" class="hidden" aria-hidden="true">
               <label for="usluga-name"><span data-i18n="formName">Ime i prezime</span><input type="text" id="usluga-name" name="name" required minlength="2" autocomplete="name" placeholder="npr. Petar Petrović"></label>
               <label for="usluga-email"><span data-i18n="formEmail">Email</span><input type="email" id="usluga-email" name="email" required autocomplete="email" placeholder="npr. vas@email.rs"></label>
-              <label for="usluga-phone"><span data-i18n="formPhone">Telefon</span><input type="tel" id="usluga-phone" name="phone" autocomplete="tel" placeholder="npr. +381 62 202 115"></label>
+              <label for="usluga-phone"><span data-i18n="formPhone">Telefon</span><input type="tel" id="usluga-phone" name="phone" autocomplete="tel" placeholder="npr. +381 62 202 115" pattern="[+\d\s\-\(\)]*" inputmode="tel"></label>
               <label for="usluga-message"><span data-i18n="formMessage">Poruka</span><textarea id="usluga-message" name="message" rows="3" placeholder="Dodatne napomene (opciono)"></textarea></label>
               <label for="usluga-date"><span data-i18n="schedulePickDate">Datum</span><input type="date" id="usluga-date" name="scheduled_date" required></label>
               <label><span data-i18n="schedulePickTime">Vreme</span></label>

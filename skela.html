@@ -69,7 +69,7 @@
               <input type="text" name="_gotcha" tabindex="-1" autocomplete="off" class="hidden" aria-hidden="true">
               <label for="skela-name"><span data-i18n="formName">Ime i prezime</span><input type="text" id="skela-name" name="name" required minlength="2" autocomplete="name" placeholder="npr. Petar Petrović"></label>
               <label for="skela-email"><span data-i18n="formEmail">Email</span><input type="email" id="skela-email" name="email" required autocomplete="email" placeholder="npr. vas@email.rs"></label>
-              <label for="skela-phone"><span data-i18n="formPhone">Telefon</span><input type="tel" id="skela-phone" name="phone" autocomplete="tel" placeholder="npr. +381 62 202 115"></label>
+              <label for="skela-phone"><span data-i18n="formPhone">Telefon</span><input type="tel" id="skela-phone" name="phone" autocomplete="tel" placeholder="npr. +381 62 202 115" pattern="[+\d\s\-\(\)]*" inputmode="tel"></label>
               <label for="skela-message"><span data-i18n="formExtraMessage">Dodatna poruka (npr. obim posla, količina)</span><textarea id="skela-message" name="message" rows="3" placeholder="Opišite obim posla ili količinu (opciono)"></textarea></label>
               <label for="skela-date"><span data-i18n="schedulePickDate">Datum</span><input type="date" id="skela-date" name="scheduled_date" required></label>
               <label><span data-i18n="schedulePickTime">Vreme</span></label>
